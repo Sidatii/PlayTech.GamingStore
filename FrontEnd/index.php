@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <head></head>
+    <?php
+    include ""
+    ?>
 </body>
 </html>
