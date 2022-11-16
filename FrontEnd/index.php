@@ -56,18 +56,18 @@
                 <center>
                     <h3 class="text-light">new product</h3>
                 </center>
-                <div class="card" style="width: 15rem; background:#00057C;">
+                <div class="card m-1" style="width: 15rem; background:#00057C;">
                     <img src="images/test.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-light">Card title</h5>
                     </div>
-                    <div class="card" style="width: 15rem; background:#00057C;">
+                    <div class="card m-1" style="width: 15rem; background:#00057C;">
                         <img src="images/test.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-light">Card title</h5>
                         </div>
                     </div>
-                    <div class="card" style="width: 15rem; background:#00057C;">
+                    <div class="card m-1" style="width: 15rem; background:#00057C;">
                         <img src="images/test.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-light">Card title</h5>
