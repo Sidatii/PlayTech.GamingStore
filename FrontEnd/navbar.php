@@ -9,9 +9,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-dark">
+<nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand text-light" href="index.php">PlayTech</a>
+    <a class="navbar-brand text-light" href="index.php"><img src="images/Asset 1PlayTech_logo.svg" alt="PlayTech logo" width="80px"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,11 +21,11 @@
           <a class="nav-link text-primary" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="Gallery.php">Gallery</a>
+          <a class="nav-link " href="Gallery.php">Gallery</a>
         </li>
         <li class="nav-item">
-          
-          <a class="nav-link text-light" href="Page Gestion.php">Gestion de Produits</a>
+
+          <a class="nav-link " href="Page Gestion.php">Gestion de Produits</a>
         </li>
       </ul>
     </div>
