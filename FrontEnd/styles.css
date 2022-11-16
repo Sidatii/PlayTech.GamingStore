@@ -15,10 +15,7 @@
 }
 .sidati{
     display: flex;
-    justify-content: end;
-    width: 100%;
     gap: 30px;
-    padding-right: 30px;
     
 }
 .sidati li{
@@ -29,3 +26,7 @@
     background-color: #00057C !important;
 }
 .card{box-shadow: 0px 4px 6px 11px  #F90606;}
+
+.navbar .collapse ul li a.active {
+    color: red !important;
+}

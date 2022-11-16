@@ -18,7 +18,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 sidati">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 sidati">
         <li class="nav-item">
           <a class="nav-link text-primary" aria-current="page" href="index.php">Home</a>
         </li>
@@ -26,10 +26,7 @@
           <a class="nav-link text-secondary" href="Gallery.php">Gallery</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-secondary " href="Page Gestion.php">Gestion de Produits</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-secondary " href="Page Gestion.php">Login</a>
+          <a class="nav-link text-secondary " href="login.php">Gestion des Produits</a>
         </li>
       </ul>
     </div>
