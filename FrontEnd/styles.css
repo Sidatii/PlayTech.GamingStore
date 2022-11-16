@@ -1,8 +1,27 @@
 /* Home design ####################################*/
+
 *{
     margin: 0px;
     padding: 0px;
 }
 
 .body{
-    background: linear-gradient(122.71deg, #000000 0%, #00057C 89.58%, #000AF9 100%);}
+    background: linear-gradient(122.71deg, #000000 0%, #00057C 89.58%, #000AF9 100%);
+    background-repeat: no-repeat;
+}
+
+.navb{
+    margin: 0px 15px;
+}
+.sidati{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    gap: 30px;
+    padding-right: 30px;
+    
+}
+.sidati li{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 18px;
+}
