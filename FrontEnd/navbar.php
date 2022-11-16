@@ -21,11 +21,10 @@
           <a class="nav-link text-primary" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="Gallery.php">Gallery</a>
+          <a class="nav-link text-secondary" href="Gallery.php">Gallery</a>
         </li>
         <li class="nav-item">
-
-          <a class="nav-link " href="Page Gestion.php">Gestion de Produits</a>
+          <a class="nav-link text-secondary " href="Page Gestion.php">Gestion de Produits</a>
         </li>
       </ul>
     </div>
