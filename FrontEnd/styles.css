@@ -5,4 +5,10 @@
 }
 
 .body{
-    background: linear-gradient(122.71deg, #000000 0%, #00057C 89.58%, #000AF9 100%);}
+    background: linear-gradient(122.71deg, #000000 0%, #00057C 89.58%, #000AF9 100%);
+    background-repeat: no-repeat;
+}
+.prudcts{
+    background-color: #00057C !important;
+}
+.card{box-shadow: 0px 4px 6px 11px  #F90606;}
