@@ -25,12 +25,14 @@
                     </div>
                 </div>
                 <div class="row mt-5">
-                    <div class="card  col-lg-4 m-3" style="width: 15rem; background:#F90606;">
+                    <H3 class="text-light " style="display: flex; flex-direction:column; align-items:center;">TOP SELL</H3>
+                </div>
+                <div class="row ">
+                    <div class="card  col-lg-4 m-3" style="width: 15rem; background:#00057C;">
                         <img src="images/test.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-light">Card title</h5>
                             <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                     <div class="card col-lg-4 m-3" style="width: 15rem; background:#00057C;">
@@ -38,7 +40,6 @@
                         <div class="card-body">
                             <h5 class="card-title text-light">Card title</h5>
                             <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                     <div class="card col-lg-4 m-3" style="width: 15rem; background:#00057C;">
@@ -46,36 +47,37 @@
                         <div class="card-body">
                             <h5 class="card-title text-light">Card title</h5>
                             <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div class="col-lg-3">
-                <center>
-                    <h3 class="text-light">new product</h3>
-                </center>
-                <div class="card m-1" style="width: 15rem; background:#00057C;">
+            <div class="col-lg-3" style="display: flex; flex-direction:column; align-items:center;">
+                <h3 class="text-light">new product</h3>
+                <div class="card m-1" style="width: 10rem; background:#00057C;">
                     <img src="images/test.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-light">Card title</h5>
                     </div>
-                    <div class="card m-1" style="width: 15rem; background:#00057C;">
-                        <img src="images/test.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-light">Card title</h5>
-                        </div>
-                    </div>
-                    <div class="card m-1" style="width: 15rem; background:#00057C;">
-                        <img src="images/test.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-light">Card title</h5>
-                        </div>
+                </div>
+                <div class="card m-1" style="width: 10rem; background:#00057C;">
+                    <img src="images/test.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-light">Card title</h5>
                     </div>
                 </div>
-
+                <div class="card m-1" style="width: 10rem; background:#00057C;">
+                    <img src="images/test.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-light">Card title</h5>
+                    </div>
+                </div>
             </div>
+
+        </div>
+        <footer>
+
+        </footer>
 
 </body>
 
