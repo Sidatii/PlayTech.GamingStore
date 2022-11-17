@@ -20,8 +20,7 @@
 
 .navbar {
     top: 0%;
-    background-image: url(images/bg-footer.jpg);
-    background-size: cover;
+    background-color: #000000a4;
     position: fixed;
     width: 100%;
     z-index: 123467890;
@@ -42,8 +41,7 @@
 
 .footer {
     height: fit-content;
-    background-image: url(images/bg-footer.jpg);
-    background-size: cover;
+    background-color: #000000;
     display: flex;
     justify-content: space-between;
     padding: 1%;
