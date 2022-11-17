@@ -31,11 +31,11 @@
                         <img style="width:100%" class="atari" src="images/atari.jpg" alt="Remember our past" width="50%">
                     </div>
                     <div class="col-lg-6">
-                        <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. A quod ea doloribus dolorem? Suscipit, porro ullam necessitatibus quod at officiis velit consectetur veritatis tenetur quia.</p>
+                        <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. A quod ea doloribus dolorem? Suscipit, porro ullam necessitatibus quod at officiis velit consectetur veritatis tenetur quia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur accusamus corrupti quod, totam ratione officiis? Quisquam, eveniet laudantium. Recusandae, earum.</p>
                     </div>
                 </div>
                 <div class="row mt-5">
-                    <H3 class="text-light " style="display: flex; flex-direction:column; align-items:center;">TOP SELL</H3>
+                    <H3 class="text-light " style="display: flex; flex-direction:column; align-items:center;">TOP SALES</H3>
                 </div>
                 <div class="row ">
                     <div class="card  col-lg-4 m-3" style="width: 15rem; background:#00057C;">
