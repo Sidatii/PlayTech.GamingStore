@@ -16,7 +16,7 @@ include ('navbar.php');
 <br><br><br>
 <div class="galleryheader" id="galleryheader">
   <img src="images/gallery.jpg" alt="Gaming room">
-  <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, animi!</h3>
+  <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, animi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos qui sint non autem? Molestiae ratione quae cum, nihil ipsum officia sed assumenda, eos at optio aperiam et accusamus odio asperiores.</h3>
 </div>
 <di class="filterbox w-10">
       <ul class="filter">

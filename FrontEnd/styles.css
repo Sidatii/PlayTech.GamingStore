@@ -25,6 +25,10 @@
     width: 100%;
     z-index: 123467890;
 }
+nav{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
 
 .sidati {
     display: flex;
@@ -52,18 +56,21 @@
 }
 
 #galleryheader{
-    display: flex;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 3%;
     justify-content: space-between;
-    width: 80%;
-    padding: 10px 10px;
+    width: 100%;
+    padding: 3% 5%;
 }
 .galleryheader img{
-    width: 50%;
+    width: 100%;
     box-shadow: #000000;
+    border: 2px solid aliceblue;
+    
 }
 .galleryheader h3{
-    width: 50%;
+    width: 100%;
     color: aliceblue;
 }
 .filter{
