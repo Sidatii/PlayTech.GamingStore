@@ -16,20 +16,20 @@
   </head>
 <body>
 <nav class="navbar navbar-expand-lg navb">
-    <a class="navbar-brand text-light" href="index.php"><img src="images/Asset 1PlayTech_logo.svg" alt="PlayTech logo" width="80px"></a>
+    <a class="navbar-brand text-light" href="index.php"><img src="images/Asset 1PlayTech_logo.svg" alt="PlayTech logo" width="60px"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 sidati">
         <li class="nav-item">
-          <a class="nav-link text-primary" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link text-light " aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light"  href="Gallery.php">Gallery</a>
+          <a class="nav-link text-light "  href="Gallery.php">Gallery</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-secondary " href="login.php">Gestion des Produits</a>
+          <a class="nav-link text-light " href="login.php">Gestion des Produits</a>
         </li>
       </ul>
     </div>

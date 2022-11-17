@@ -2,7 +2,7 @@
             <div class="img">
                 <img src="images/Asset 1PlayTech_logo.svg" alt="PlayTech logo" width="80px">
             </div>
-            <div class="sin">playtech</div>
+            <div style="text-xxx">playtech</div>
             <div>
                 <ul style="list-style:none;">
                     <li class="text-light">
