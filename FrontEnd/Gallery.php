@@ -13,20 +13,57 @@
 <?php
 include ('navbar.php');
 ?>
+<br><br><br>
 <div class="galleryheader" id="galleryheader">
   <img src="images/gallery.jpg" alt="Gaming room">
   <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, animi!</h3>
 </div>
-<di class="filterbox">
+<di class="filterbox w-10">
       <ul class="filter">
-        <li class="category 1"><button onclick="filterProduct('category1')">category 1</button> </li>
-        <li class="category 2"><button onclick="filterProduct('category2')">category 2</button></li>
-        <li class="category 3"><button onclick="filterProduct('category3')">category 3</button></li>
-        <li class="category 4"><button onclick="filterProduct('category4')">category 4</button></li>
-        <li class="category 5"><button onclick="filterProduct('category5')">category 5</button></li>
+        <li class="category1"><button onclick="filterProduct('category1')">category 1</button> </li>
+        <li class="category2"><button onclick="filterProduct('category2')">category 2</button></li>
+        <li class="category3"><button onclick="filterProduct('category3')">category 3</button></li>
+        <li class="category4"><button onclick="filterProduct('category4')">category 4</button></li>
+        <li class="category5"><button onclick="filterProduct('category5')">category 5</button></li>
       </ul>
     </di>
 <div class="products">
+  <div class="productCard">
+    <img src="images/test.png" alt="product photo">
+    <h4>Product title</h4>
+    <h4>Product price</h4>
+    <h4>Product quantity</h4>
+  </div>
+  <div class="productCard">
+    <img src="images/test.png" alt="product photo">
+    <h4>Product title</h4>
+    <h4>Product price</h4>
+    <h4>Product quantity</h4>
+  </div>
+  <div class="productCard">
+    <img src="images/test.png" alt="product photo">
+    <h4>Product title</h4>
+    <h4>Product price</h4>
+    <h4>Product quantity</h4>
+  </div>
+  <div class="productCard">
+    <img src="images/test.png" alt="product photo">
+    <h4>Product title</h4>
+    <h4>Product price</h4>
+    <h4>Product quantity</h4>
+  </div>
+  <div class="productCard">
+    <img src="images/test.png" alt="product photo">
+    <h4>Product title</h4>
+    <h4>Product price</h4>
+    <h4>Product quantity</h4>
+  </div>
+  <div class="productCard">
+    <img src="images/test.png" alt="product photo">
+    <h4>Product title</h4>
+    <h4>Product price</h4>
+    <h4>Product quantity</h4>
+  </div>
   <div class="productCard">
     <img src="images/test.png" alt="product photo">
     <h4>Product title</h4>
