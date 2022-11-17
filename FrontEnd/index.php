@@ -75,10 +75,10 @@
             </div>
 
         </div>
-        <footer>
-
-        </footer>
-
+    </div>
+        
+        <?php
+    include('footer.php');
+    ?>
 </body>
-
 </html>

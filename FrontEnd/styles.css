@@ -29,3 +29,12 @@
     font-family: 'Titillium Web', sans-serif;
     font-size: 18px;
 }
+
+.footer{
+    height: fit-content;
+    background-image: url(images/bg-footer.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
