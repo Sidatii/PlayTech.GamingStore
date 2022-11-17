@@ -76,9 +76,7 @@
 </head>
 
 <body class="text-center">
-    <?php
-    include('navbar.php');
-    ?> 
+    <!-- -->
     <main class="form-signin w-100 m-auto">
         <form>
             <img class="mb-4" src="images/Asset 1PlayTech_logo.svg" alt="" width="72" height="57">
