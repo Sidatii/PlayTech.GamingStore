@@ -132,6 +132,10 @@ nav{
     
 }
 
+.productCard h4{
+    font-size: 14px;b
+}
+
 
 /* Footer ################################################ */
 .footer1{
@@ -157,7 +161,7 @@ nav{
 .footer1 .links{
     display: flex;
     justify-content: space-evenly;
-    gap: 30px;
+    gap: 10px;
     align-items: flex-start;
 
 }
