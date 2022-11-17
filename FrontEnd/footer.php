@@ -1,5 +1,5 @@
 <footer class="container-fluid footer">
-            <div>
+            <div class="img">
                 <img src="images/Asset 1PlayTech_logo.svg" alt="PlayTech logo" width="80px">
             </div>
             <div>
