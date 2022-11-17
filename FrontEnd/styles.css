@@ -1,5 +1,188 @@
 /* Home design ####################################*/
-*{
+
+* {
     margin: 0px;
     padding: 0px;
+}
+
+.body {
+    background: linear-gradient(122.71deg, #000000 0%, #00057C 89.58%, #000AF9 100%);
+    background-repeat: no-repeat;
+}
+
+.prudcts {
+    background-color: #00057C !important;
+}
+
+.card {
+    box-shadow: 0px 2px 11px 2px #F90606;
+}
+
+.navbar {
+    top: 0%;
+    background-color: #000000a4;
+    position: fixed;
+    width: 100%;
+    z-index: 123467890;
+}
+nav{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.sidati {
+    display: flex;
+    gap: 30px;
+    padding-right: 30px;
+
+}
+
+.sidati li {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 18px;
+}
+
+
+.footer {
+    height: fit-content;
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.footer .img {
+    align-self: center !important;
+}
+
+#galleryheader{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 3%;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3% 5%;
+}
+.galleryheader img{
+    width: 100%;
+    box-shadow: #000000;
+    border: 2px solid aliceblue;
+    
+}
+.galleryheader h3{
+    width: 100%;
+    color: aliceblue;
+}
+.filter{
+    display: flex;
+    gap: 10px;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 10px 0px;
+    padding: 0px 0px;
+}
+.filter button:hover{
+    background-color: aliceblue;
+    color: #000000;
+}
+
+.filter li{
+    list-style: none;
+}
+
+.filter button{
+    border: 1px solid white;
+    background: none;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 10px;
+
+}
+
+.products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.productCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 200px;
+    padding: 10px 10px;
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+}
+.productCard img{
+    align-content: center;
+    max-width: 150px;
+    
+}
+
+.productCard h4{
+    font-size: 14px;b
+}
+
+
+/* Footer ################################################ */
+.footer1{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 10px;
+    font-size: 20px;
+    background-color: #0000007d;
+}
+
+.footer1 li{
+    list-style-type: none;
+}
+
+.footer1 .icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 5%;
+}
+
+.footer1 .links{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    align-items: flex-start;
+
+}
+
+.footer1 ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    color: aliceblue;
+    font-family: "Monserrat", sans-serif;
+}
+
+.all-rights{
+    display: flex;
+    color: aliceblue;
+    justify-content: center;
+    font-family: "Monserrat", sans-serif;
+    padding-bottom: 5px;
+}
+
+.logof img{
+    width: 100px;
 }
