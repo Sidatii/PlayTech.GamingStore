@@ -9,7 +9,7 @@
     <meta name="generator" content="Hugo 0.104.2">
     <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="signin.css">
+    <link rel="stylesheet" href="Signin.css">
     <title>PlayTech | Login</title>
 
 
@@ -39,9 +39,6 @@
             <button class="button" type="submit">Sign in</button>
             <p>&copy; 2022–2023</p>
         </form>
-
-
-
 </body>
 
 </html>
