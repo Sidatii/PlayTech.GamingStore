@@ -60,55 +60,17 @@ include_once "connexion.php";
           <td><?= $row['CatName'] ?></td>
 
       </tr>
-  <?php
-            }
-          }
-  ?>
-
-
-    </table>
-    <!-- ajouter categorie -->
-    <table class="table table-bordered bg-light text-center">
-      <thead>
-        <tr>
-          <th colspan="2">
-            <H3>ajouter une nouvelle catégorie</H3>
-          </th>
-        </tr>
-      </thead>
+  
       <tr>
-        <?php
-        if (isset($_POST['button'])) {
-          //extraction des informations envoyé dans des variables par la methode POST
-          extract($_POST);
-          //verifier que tous les champs ont été remplis
-          if (isset($CatName)) {
-            //connexion à la base de donnée
-            include_once "connexion.php";
-            //requête d'ajout
-            $req = mysqli_query($conn, "INSERT INTO category VALUES( '$CatName')");
-            if ($req) { //si la requête a été effectuée avec succès , on fait une redirection
-              header("location: GestionProduits.php");
-            } else { //si non
-              $message = "Employé non ajouté";
-            }
-          } else {
-            //si non
-            $message = "Veuillez remplir tous les champs !";
-          }
-        }
+        <td colspan="7"><a href="ajouter.php">ajouter</a></td>
+        </tr>
 
-        ?>
-        <form action="">
-          <td><input type="text" placeholder="name" name="CatName"></td>
-          <td><input value="ajouter" type="button"></td>
-        </form>
-      </tr>
+
     </table>
     <!-- produit table  -->
     <table class="table table-bordered bg-light text-center">
       <thead>
-        <th colspan="6">
+        <th colspan="7">
           <h3>produit</h3>
           <?php
           //requête pour afficher la liste des employés
@@ -139,6 +101,8 @@ include_once "connexion.php";
           <td><?= $row['Price en DH'] ?></td>
           <td><?= $row['Quantity'] ?></td>
           <td><?= $row['IDC'] ?></td>
+          <td><img src="<?= $row['img'] ?>" alt=""></td>
+          
           <!--Nous alons mettre l'id de chaque employé dans ce lien -->
           <td><a href="modifier.php?ID=<?= $row['ID'] ?>"><img src="images/pen.png"></a></td>
           <td><a href="supprimer.php?ID=<?= $row['ID'] ?>"><img src="images/trash.png"></a></td>
@@ -148,26 +112,9 @@ include_once "connexion.php";
             }
           }
     ?>
-    </table>
-    <!-- ajouter produit -->
-    <table class="table table-bordered bg-light text-center">
-      <thead>
-        <tr>
-          <th colspan="5">
-            <H3>ajouter un nouveau produit</H3>
-          </th>
+    <tr>
+        <td colspan="7"><a href="ajouter.php">ajouter</a></td>
         </tr>
-      </thead>
-      <tr>
-        <form action="" method="POST">
-          <td><input type="text" placeholder="ProductName" name="ProductName"></td>
-          <td><input type="number" placeholder="Price" name="Price"></td>
-          <td><input type="number" placeholder="Quantity"></td>
-          <td><input type="text" placeholder="IDC"></td>
-          <!-- <td><input type="submit" value="Ajouter" name="button"></td> -->
-          <td><a href="ajouter.php">ajouter</a></td>
-        </form>
-      </tr>
     </table>
   </div>
 
