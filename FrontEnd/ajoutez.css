@@ -12,6 +12,8 @@ body {
     justify-content: center;
     min-height: 100vh;
     position: relative;
+    background: linear-gradient(122.71deg, #000000 0%, #00057C 89.58%, #000AF9 100%);
+    background-repeat: no-repeat;
 }
 .Btn_add {
     width: fit-content;
@@ -71,7 +73,7 @@ tr:nth-child(2n) td {
     flex-direction: column;
 }
 .back_btn {
-    color: #2bc48a;
+    color: #00057C;
     text-decoration: 0;
     display: flex;
     align-items: center;
@@ -85,7 +87,7 @@ h2 {
     font-weight: 500;
     text-transform: uppercase;
 }
-.erreur_message {
+.error_message {
     color: red;
     font-size: 12px;
 }

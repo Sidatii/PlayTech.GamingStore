@@ -99,10 +99,10 @@ include_once "connexion.php";
         }
 
         ?>
-        <form action="">
+        <!-- <form action="">
           <td><input type="text" placeholder="name" name="CatName"></td>
-          <td><input value="ajouter" type="button"></td>
-        </form>
+          <td><input  value="ajouter" type="button"></td>
+        </form> -->
       </tr>
     </table>
     <!-- produit table  -->
@@ -165,7 +165,7 @@ include_once "connexion.php";
           <td><input type="number" placeholder="Quantity"></td>
           <td><input type="text" placeholder="IDC"></td>
           <!-- <td><input type="submit" value="Ajouter" name="button"></td> -->
-          <td><a href="ajouter.php">ajouter</a></td>
+          <td><a href="add.php">ajouter</a></td>
         </form>
       </tr>
     </table>
