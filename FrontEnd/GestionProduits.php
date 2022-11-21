@@ -1,19 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "playtech";
-$password = "";
-$root="root";
-
-// Create connection
-$conn = new mysqli($servername,$root , $password, $username);
-
-// Check connection
-// if ($conn->connect_error) {
-//   die("Connection failed: " . $conn->connect_error);
-// }
-// echo "Connected successfully";
-$sql = "INSERT INTO `category`( `CatName`) 
-        VALUES ('pc')";
+//inclure la page de connexion
+include_once "connexion.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,10 +14,14 @@ $sql = "INSERT INTO `category`( `CatName`)
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   <style>
     input {
-      width: 100% ;
+      width: 100%;
       height: 100%;
       border: none;
       background: none;
+    }
+
+    img {
+      height: 25px;
     }
   </style>
 </head>
@@ -47,16 +38,34 @@ $sql = "INSERT INTO `category`( `CatName`)
       <thead>
         <th colspan="2">
           <h3>catégorie</h3>
+          <?php
+          //requête pour afficher la liste des employés
+          $req = mysqli_query($conn, "SELECT * FROM category");
+          if (mysqli_num_rows($req) == 0) {
+            //s'il n'existe pas d'employé dans la base de donné , alors on affiche ce message :
+            echo "Il n'y a pas encore de category ajouter !";
+          } else { ?>
         </th>
       </thead>
       <tr>
-        <th>idc</th>
-        <th>Name</th>
+        <th>IDC</th>
+        <th>CatName</th>
       </tr>
       <tr>
-        <td>1</td>
-        <td>c1</td>
+        <?php
+            //si non , affichons la liste de tous les employés
+            while ($row = mysqli_fetch_assoc($req)) {
+        ?>
+          <td><?= $row['IDC'] ?></td>
+          <td><?= $row['CatName'] ?></td>
+
       </tr>
+  <?php
+            }
+          }
+  ?>
+
+
     </table>
     <!-- ajouter categorie -->
     <table class="table table-bordered bg-light text-center">
@@ -68,8 +77,32 @@ $sql = "INSERT INTO `category`( `CatName`)
         </tr>
       </thead>
       <tr>
-        <td><input type="text"  placeholder="name" required ></td>
-        <td><button class="btn btn-primary"> ajouter </button></td>
+        <?php
+        if (isset($_POST['button'])) {
+          //extraction des informations envoyé dans des variables par la methode POST
+          extract($_POST);
+          //verifier que tous les champs ont été remplis
+          if (isset($CatName)) {
+            //connexion à la base de donnée
+            include_once "connexion.php";
+            //requête d'ajout
+            $req = mysqli_query($conn, "INSERT INTO category VALUES( '$CatName')");
+            if ($req) { //si la requête a été effectuée avec succès , on fait une redirection
+              header("location: GestionProduits.php");
+            } else { //si non
+              $message = "Employé non ajouté";
+            }
+          } else {
+            //si non
+            $message = "Veuillez remplir tous les champs !";
+          }
+        }
+
+        ?>
+        <form action="">
+          <td><input type="text" placeholder="name" name="CatName"></td>
+          <td><input value="ajouter" type="button"></td>
+        </form>
       </tr>
     </table>
     <!-- produit table  -->
@@ -77,6 +110,14 @@ $sql = "INSERT INTO `category`( `CatName`)
       <thead>
         <th colspan="6">
           <h3>produit</h3>
+          <?php
+          //requête pour afficher la liste des employés
+          $req = mysqli_query($conn, "SELECT * FROM produits");
+          if (mysqli_num_rows($req) == 0) {
+            //s'il n'existe pas d'employé dans la base de donné , alors on affiche ce message :
+            echo "Il n'y a pas encore d'employé ajouter !";
+          } else {
+          ?>
         </th>
       </thead>
       <tr>
@@ -85,40 +126,28 @@ $sql = "INSERT INTO `category`( `CatName`)
         <th>prix</th>
         <th>quantité</th>
         <th>idc</th>
-        <th>Modification</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
       </tr>
-      <tr>
-        <td>1</td>
-        <td>p1</td>
-        <td>1000dh</td>
-        <td>20</td>
-        <td>1</td>
-        <td><button type="button" class="btn btn-primary"> modifier </button><button type="button" class="btn btn-danger">supprimer</button></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>p2</td>
-        <td>1000dh</td>
-        <td>20</td>
-        <td>1</td>
-        <td><button type="button" class="btn btn-primary"> modifier </button><button type="button" class="btn btn-danger">supprimer</button></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>p2</td>
-        <td>1000dh</td>
-        <td>20</td>
-        <td>1</td>
-        <td><button type="button" class="btn btn-primary"> modifier </button><button type="button" class="btn btn-danger">supprimer</button></td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>p2</td>
-        <td>1000dh</td>
-        <td>20</td>
-        <td>1</td>
-        <td><button type="button" class="btn btn-primary"> modifier </button><button type="button" class="btn btn-danger">supprimer</button></td>
-      </tr>
+      <?php
+            //si non , affichons la liste de tous les employés
+            while ($row = mysqli_fetch_assoc($req)) {
+      ?>
+        <tr>
+          <td><?= $row['ID'] ?></td>
+          <td><?= $row['ProductName'] ?></td>
+          <td><?= $row['Price en DH'] ?></td>
+          <td><?= $row['Quantity'] ?></td>
+          <td><?= $row['IDC'] ?></td>
+          <!--Nous alons mettre l'id de chaque employé dans ce lien -->
+          <td><a href="modifier.php?ID=<?= $row['ID'] ?>"><img src="images/pen.png"></a></td>
+          <td><a href="supprimer.php?ID=<?= $row['ID'] ?>"><img src="images/trash.png"></a></td>
+
+        </tr>
+    <?php
+            }
+          }
+    ?>
     </table>
     <!-- ajouter produit -->
     <table class="table table-bordered bg-light text-center">
@@ -130,11 +159,14 @@ $sql = "INSERT INTO `category`( `CatName`)
         </tr>
       </thead>
       <tr>
-        <td><input type="text" placeholder="name"></td>
-        <td><input type="number" placeholder="prix"></td>
-        <td><input type="number" placeholder="quantité"></td>
-        <td><input type="text" placeholder="idc"></td>
-        <td><button type="button" class="btn btn-primary"> ajouter </button></td>
+        <form action="" method="POST">
+          <td><input type="text" placeholder="ProductName" name="ProductName"></td>
+          <td><input type="number" placeholder="Price" name="Price"></td>
+          <td><input type="number" placeholder="Quantity"></td>
+          <td><input type="text" placeholder="IDC"></td>
+          <!-- <td><input type="submit" value="Ajouter" name="button"></td> -->
+          <td><a href="ajouter.php">ajouter</a></td>
+        </form>
       </tr>
     </table>
   </div>

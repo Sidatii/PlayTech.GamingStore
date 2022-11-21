@@ -39,10 +39,7 @@ CREATE TABLE `admin` (
 -- Table structure for table `category`
 --
 
-CREATE TABLE `category` (
-  `IDC` int(11) NOT NULL,
-  `CatName` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+ ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 

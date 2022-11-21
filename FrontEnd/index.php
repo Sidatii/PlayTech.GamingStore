@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-lg-9">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 galleryheader">
                         <img style="width:100%" class="atari" src="images/atari.jpg" alt="Remember our past" width="50%">
                     </div>
                     <div class="col-lg-6">
