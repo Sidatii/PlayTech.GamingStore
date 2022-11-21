@@ -18,6 +18,7 @@ include ('navbar.php');
   <img src="images/gallery.jpg" alt="Gaming room">
   <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, animi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos qui sint non autem? Molestiae ratione quae cum, nihil ipsum officia sed assumenda, eos at optio aperiam et accusamus odio asperiores.</h3>
 </div>
+<!-- change by mokh -->
 <?php
       include('connexion.php');
           //requête pour afficher la liste des employés
@@ -26,17 +27,29 @@ include ('navbar.php');
             while ($row = mysqli_fetch_assoc($req)) {  
           ?>
 <di class="filterbox w-10">
-        <button class="filter"><?= $row['CatName'] ?></button>
+        <button class="btn btn-outline-light"><?= $row['CatName'] ?></button>
       <?php
             }
   ?>
     </di>
 <div class="products">
   <div class="productCard">
-    <img src="images/test.png" alt="product photo">
-    <h4>Product title</h4>
-    <h4>Product price</h4>
-    <h4>Product quantity</h4>
+  <?php
+      include('connexion.php');
+          //requête pour afficher la liste des employés
+          $req = mysqli_query($conn, "SELECT * FROM produits");
+          
+            while ($row = mysqli_fetch_assoc($req)) {  
+          ?>
+    <img src="images\Laptops.png" alt="product photo">
+    <h4><?= $row['ProductName'] ?></h4>
+    <h4><?= $row['Price en DH'] ?>dh</h4>
+    <h4><?= $row['Quantity'] ?></h4>
+      <?php
+            }
+  ?>
+  <!-- mokh change termine -->
+
   </div>
   <div class="productCard">
     <img src="images/test.png" alt="product photo">
