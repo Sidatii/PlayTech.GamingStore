@@ -1,6 +1,7 @@
 html,
 body {
-  height: 100%;
+  /* height: 100%; */
+  width: 100%;
   
 }
 
@@ -10,7 +11,8 @@ body {
   justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #f5f5f5;
+  background: linear-gradient(122.71deg, #000000 0%, #00057C 89.58%, #000AF9 100%);
+  background-repeat: no-repeat;
 }
 
 .form-signin {
@@ -18,71 +20,49 @@ body {
   padding: 15px;
 }
 
-.form-signin .form-floating:focus-within {
-  z-index: 2;
+.form{
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+.form-floating{
+  display: flex;
+  flex-direction: column;
+  
 }
 
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+.form h1{
+  color: aliceblue;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-
-
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
+.form div label{
+  color: aliceblue;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
+.form div .form-control{
+  width: 250px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: #000000;
+  padding: 0px 5px;
 }
 
-.b-example-divider {
-    height: 3rem;
-    background-color: rgba(0, 0, 0, .1);
-    border: solid rgba(0, 0, 0, .15);
-    border-width: 1px 0;
-    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+.form div input ::placeholder{
+  padding-left: 10px;
 }
 
-.b-example-vr {
-    flex-shrink: 0;
-    width: 1.5rem;
-    height: 100vh;
-}
+.checkbox{
+  display: flex;
+  padding: 5px 5px;
 
-.bi {
-    vertical-align: -.125em;
-    fill: currentColor;
 }
-
-.nav-scroller {
-    position: relative;
-    z-index: 2;
-    height: 2.75rem;
-    overflow-y: hidden;
-}
-
-.nav-scroller .nav {
-    display: flex;
-    flex-wrap: nowrap;
-    padding-bottom: 1rem;
-    margin-top: -1px;
-    overflow-x: auto;
-    text-align: center;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
+.form .checkbox input{
+  /* display: flex; */
+  padding: 0px 0px;
+  
 }

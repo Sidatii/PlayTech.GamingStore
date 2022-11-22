@@ -51,9 +51,9 @@
         <label>Product discription</label>
         <textarea name="productDiscription" id="" cols="30" rows="10"></textarea>
         <label>Product image</label>
-        <input type="file">
+        <input type="file" name="productImage" accept="image/*">
         <label>Product Quantity</label>
-        <input type="number" name="quantity">
+        <input type="number" name="productQuantity">
         <label>Product Price</label>
         <input type="number" name="productPrice">
         <input type="submit" value="Add product" name="button">
