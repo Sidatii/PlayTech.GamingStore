@@ -14,42 +14,23 @@ include_once('dbconnection.php');
     <title>Document</title>
 </head>
 
-<body>
-
-    <?php
-    require 'dbconnection.php';
-
-    if (isset($_POST['add_product'])) {
-        $product_name = mysqli_real_escape_string($con, $_POST['productName']);
-        $product_discription = mysqli_real_escape_string($con, $_POST['productDiscription']);
-        $product_image = mysqli_real_escape_string($con, $_POST['productImage']);
-        $product_quantity = mysqli_real_escape_string($con, $_POST['productQuantity']);
-        $product_price = mysqli_real_escape_string($con, $_POST['productPrice']);
-        $category_id = mysqli_real_escape_string($con, $_POST['IDC']);
-
-
-        $query = "INSERT INTO produits (productName, productDiscription, productImage, productQuantity, productPrice, IDC)
-     values ('$product_name', '$product_discription', '$product_image', '$product_quantity', '$product_price', '$category_id')";
-
-        $query_run = mysqli_query($con, $query);
-        if ($query_run) {
-            $_SESSION['message'] = "Product added successfully";
-            header("Location: add.php");
-            exit(0);
-        } else {
-            $_SESSION['message'] = "Product not added";
-            header("Location: add.php");
-            exit(0);
-        }
-    }
-
-    ?>
-
-    <div class="form" style="margin-top:20px;">
+<div class="form" style="margin-top:20px;">
     <?php include('message.php') ?>
 
         <a href="GestionProduits.php" class="back_btn"><img src="images/back.png"> Retour</a>
-        <h2>Add new product</h2>
+        <h2>Update product</h2>
+        <?php
+
+        if(isset($_GET['id']))
+        {
+            $product_id = mysqli_real_escape_string($con, $_GET['ID']);
+            $query = "SELECT * FROM produits WHERE id='$product_id'";
+            $query_run = mysqli_query($con, $query);
+
+            if(mysqli_num_rows($query_run) > 0)
+            {
+                $produits = mysqli_fetch_array($query_run);
+                ?>
         <form method="POST">
             <label>Product name</label>
             <input type="text" name="productName" required>
@@ -82,11 +63,19 @@ include_once('dbconnection.php');
 
             <input type="submit" value="Add product" name="add_product">
         </form>
+        <?php
+                            }
+                            else
+                            {
+                                echo "<h4>No Such Id Found</h4>";
+                            }
+                        }
+                        ?>
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

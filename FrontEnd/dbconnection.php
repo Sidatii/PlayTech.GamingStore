@@ -1,8 +1,8 @@
 <?php
 
-$conection = mysqli_connect("localhost", "root", "", "PlayTech");
+$con = mysqli_connect("localhost", "root", "", "playtech");
 
-if(!$connection){
+if(!$con){
     die('Connection failed'. mysqli_connect_error());
 }
 
