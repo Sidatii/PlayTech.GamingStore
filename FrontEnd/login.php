@@ -35,7 +35,7 @@
                 <input type="checkbox" value="remember-me">
                 <label>Remember me</label> 
             </div>
-            <button class="button" type="submit">Sign in</button>
+            <button class="button" type="submit"><a style="none" href="GestionProduits.php">Sign in</a></button>
             <p>&copy; 2022–2023</p>
         </form>
 </body>
