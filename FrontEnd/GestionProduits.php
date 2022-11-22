@@ -102,9 +102,9 @@ include_once "connexion.php";
             <td><?= $row['ProductName'] ?></td>
             <td><?= $row['Price en DH'] ?></td>
             <td><?= $row['Quantity'] ?></td>
-            <td><img src="<?= $row['img'] ?>" alt=""></td>
+            <td><img src="./image/<?php echo $row['img']; ?>"></td>
             <!--Nous alons mettre l'id de chaque employé dans ce lien -->
-            <td><a href="modifier.php?ID=<?= $row['ID'] ?>"><img class="hh" src="images/pen.png"></a></td>
+            <td><a href="editproduct.php?ID=<?= $row['ID'] ?>"><img class="hh" src="images/pen.png"></a></td>
             <td><a href="supprimer.php?ID=<?= $row['ID'] ?>"><img class="hh" src="images/trash.png"></a></td>
           </tr>
       <?php
@@ -112,7 +112,7 @@ include_once "connexion.php";
             }
       ?>
       <tr>
-        <td colspan="7"><a href="ajouter.php">ajouter</a></td>
+        <td colspan="7"><a href="add.php">ajouter</a></td>
       </tr>
       </table>
     </div>

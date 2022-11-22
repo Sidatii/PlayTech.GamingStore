@@ -22,16 +22,24 @@ include_once('dbconnection.php');
     if (isset($_POST['add_product'])) {
         $product_name = mysqli_real_escape_string($con, $_POST['productName']);
         $product_discription = mysqli_real_escape_string($con, $_POST['productDiscription']);
-        $product_image = mysqli_real_escape_string($con, $_POST['productImage']);
+        // $product_image = mysqli_real_escape_string($con, $_POST['productImage']);
         $product_quantity = mysqli_real_escape_string($con, $_POST['productQuantity']);
         $product_price = mysqli_real_escape_string($con, $_POST['productPrice']);
         $category_id = mysqli_real_escape_string($con, $_POST['IDC']);
 
+        
+	$filename = $_FILES["productImage"]["name"];
+	$tempname = $_FILES["productImage"]["tmp_name"];
+	$folder = "./image/" . $filename;
 
-        $query = "INSERT INTO produits (productName, productDiscription, productImage, productQuantity, productPrice, IDC)
-     values ('$product_name', '$product_discription', '$product_image', '$product_quantity', '$product_price', '$category_id')";
+	// Now let's move the uploaded image into the folder: image
+	move_uploaded_file($tempname, $folder);
+
+        $query = "INSERT INTO `produits` ( `ProductName`, `Discription`, `Quantity`, `Price en DH`, `IDC`, `img`)
+         VALUES ('$product_name', '$product_discription', $product_quantity, $product_price, $category_id, '$filename')";
 
         $query_run = mysqli_query($con, $query);
+        
         if ($query_run) {
             $_SESSION['message'] = "Product added successfully";
             header("Location: add.php");
@@ -50,7 +58,7 @@ include_once('dbconnection.php');
 
         <a href="GestionProduits.php" class="back_btn"><img src="images/back.png"> Retour</a>
         <h2>Add new product</h2>
-        <form method="POST">
+        <form method="POST"  enctype="multipart/form-data">
             <label>Product name</label>
             <input type="text" name="productName" required>
             <label>Product discription</label>
@@ -64,9 +72,9 @@ include_once('dbconnection.php');
             <label>Product Price</label>
             <select name="IDC" id="">
                 <?php
-                include('connexion.php');
+                include('dbconnection.php');
                 //requête pour afficher la liste des employés
-                $req = mysqli_query($conn, "SELECT * FROM category");
+                $req = mysqli_query($con, "SELECT * FROM category");
 
                 while ($row = mysqli_fetch_assoc($req)) {
                 ?>

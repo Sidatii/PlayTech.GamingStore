@@ -44,9 +44,9 @@
         while ($row = mysqli_fetch_assoc($req)) {
         ?>
             <div class="productCard" style="width:300px; height:250px;">
-          <img src="<?= $row['img'] ?>" alt="product photo">
+          <img src="image/<?= $row['img'] ?>" alt="product photo">
           <h4><?= $row['ProductName'] ?></h4>
-          <h4><?= $row['Price en DH'] ?>dh</h4>
+          <h4><?= $row['Price en DH'] ?> DH</h4>
           <h4><?= $row['Quantity'] ?></h4>
       </div>
       <?php
