@@ -178,3 +178,7 @@ nav{
 .logof img{
     width: 100px;
 }
+
+.navbar-toggler-icon{
+    background-color: aliceblue;
+}
