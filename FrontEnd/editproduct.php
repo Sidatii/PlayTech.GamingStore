@@ -47,29 +47,30 @@ include_once('dbconnection.php');
             <label>Product Price</label>
             <input type="float" value=" <?= $products['Price en DH'] ?>" name="productPrice" required>
             <label>Product Price</label>
+
             <select name="IDC" id="">
             
-                <?php
-                include('dbconnection.php');
-                //requête pour afficher la liste des employés
-                $req = mysqli_query($con, "SELECT * FROM category");
+            <?php
+            include('dbconnection.php');
+            //requête pour afficher la liste des employés
+            $req = mysqli_query($con, "SELECT * FROM category");
 
-                while ($row = mysqli_fetch_assoc($req)) {
-                ?>
-                <di class="filterbox w-10">
+            while ($row = mysqli_fetch_assoc($req)) {
+            ?>
+            <di class="filterbox w-10">
 
-                    <option value="<?= $row['IDC'] ?>">
-                        <?= $row['CatName'] ?>
-                    </option>
-                    <?php
-                }
-        ?>
+            <option value="<?= $row['IDC'] ?>">
+            <?= $row['CatName'] ?>
+            </option>
+            <?php
+            }
+            ?>
             </select>
 
             <input type="submit" value="Edit product" name="edit_product">
         </form>
 
-        <?php
+            <?php
 
             } else {
                 echo "ID not found";

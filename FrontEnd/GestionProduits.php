@@ -49,8 +49,6 @@ include_once "connexion.php";
         <tr>
           <th>IDC</th>
           <th>CatName</th>
-          <th>Modifier</th>
-          <th>Supprimer</th>
         </tr>
         <tr>
           <?php
@@ -63,15 +61,13 @@ include_once "connexion.php";
           <td>
             <?= $row['CatName'] ?>
           </td>
-          <td><a href="updateCategory.php?IDC=<?= $row['IDC'] ?>"><img class="hh" src="images/pen.png"></a></td>
-          <td><a href="supprimercategory.php?IDC=<?= $row['IDC'] ?>"><img class="hh" src="images/trash.png"></a></td>
 
         </tr>
         <?php }
             } ?>
 
         <tr>
-          <td colspan="7"><a href="ajouter.php">ajouter</a></td>
+          <td colspan="7"><a href="addcat.php">ajouter</a></td>
 
         </tr>
 

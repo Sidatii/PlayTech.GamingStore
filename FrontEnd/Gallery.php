@@ -39,10 +39,10 @@
     if (isset($_GET['category'])) {
 
        {
-        if($_GET['category']==11){
+        if($_GET['category']==1){
           $sql = "SELECT * FROM produits";
       $req = mysqli_query($conn, $sql);
-      $docimg="images/";
+      $docimg="image/";
       while ($row = mysqli_fetch_assoc($req)) {
         echo '
               <div class="productCard" style="width:300px; height:250px;">
@@ -57,7 +57,7 @@
         $category = $_GET['category'];
         $sql = "SELECT * FROM produits WHERE IDC = $category";
         $req = mysqli_query($conn, $sql);
-        $docimg="images/";
+        $docimg="image/";
         while ($row = mysqli_fetch_assoc($req)) {
           echo '
                 <div class="productCard" style="width:300px; height:250px;">
@@ -73,7 +73,7 @@
      else {
       $sql = "SELECT * FROM produits";
       $req = mysqli_query($conn, $sql);
-      $docimg="images/";
+      $docimg="image/";
       while ($row = mysqli_fetch_assoc($req)) {
         echo '
               <div class="productCard" style="width:300px; height:250px;">
