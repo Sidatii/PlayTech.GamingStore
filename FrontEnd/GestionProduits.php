@@ -1,5 +1,5 @@
 <?php
-//inclure la page de connexion
+session_start();
 include_once "connexion.php";
 ?>
 <!DOCTYPEhtml>
@@ -72,6 +72,7 @@ include_once "connexion.php";
       <!-- produit table  -->
       <table class="table table-bordered bg-light text-center">
         <thead>
+          <?php include('message.php'); ?>
           <th colspan="8">
             <h3>produit</h3>
             <?php
@@ -79,7 +80,7 @@ include_once "connexion.php";
             $req = mysqli_query($conn, "SELECT * FROM produits");
             if (mysqli_num_rows($req) == 0) {
               //s'il n'existe pas d'employé dans la base de donné , alors on affiche ce message :
-              echo "Il n'y a pas encore d'employé ajouter !";
+              echo "Il n'y a pas encore de produits ajoutés !";
             } else {
             ?>
           </th>

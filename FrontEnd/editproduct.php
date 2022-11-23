@@ -16,41 +16,7 @@ include_once('dbconnection.php');
 
 <body>
 
-    <?php
-    require 'dbconnection.php';
-
-    if (isset($_POST['add_product'])) {
-        $product_name = mysqli_real_escape_string($con, $_POST['productName']);
-        $product_discription = mysqli_real_escape_string($con, $_POST['productDiscription']);
-        $product_quantity = mysqli_real_escape_string($con, $_POST['productQuantity']);
-        $product_price = mysqli_real_escape_string($con, $_POST['productPrice']);
-        $category_id = mysqli_real_escape_string($con, $_POST['IDC']);
-
-
-        $filename = $_FILES["productImage"]["name"];
-        $tempname = $_FILES["productImage"]["tmp_name"];
-        $folder = "./image/" . $filename;
-
-        // Now let's move the uploaded image into the folder: image
-        move_uploaded_file($tempname, $folder);
-
-        $query = "INSERT INTO `produits` ( `ProductName`, `Discription`, `Quantity`, `Price en DH`, `IDC`, `img`)
-         VALUES ('$product_name', '$product_discription', $product_quantity, $product_price, $category_id, '$filename')";
-
-        $query_run = mysqli_query($con, $query);
-
-        if ($query_run) {
-            $_SESSION['message'] = "Product added successfully";
-            header("Location: GestionProduits.php");
-            exit(0);
-        } else {
-            $_SESSION['message'] = "Product not added";
-            header("Location: GestionProduits.php");
-            exit(0);
-        }
-    }
-
-    ?>
+    
 
     <div class="form" style="margin-top:20px;">
         <?php include('message.php') ?>
@@ -68,15 +34,16 @@ include_once('dbconnection.php');
 
         <a href="GestionProduits.php" class="back_btn"><img src="images/back.png"> Retour</a>
         <h2>Edit product</h2>
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data" action="update.php?ID=<?=  $_GET['ID'] ?>">
+            <input type="hidden" name="product_id" value="<?= $product_id ?>">
             <label>Product name</label>
             <input type="text" value=" <?= $products['ProductName'] ?>" name="productName" required>
             <label>Product discription</label>
             <input type="text" value=" <?= $products['Discription'] ?>" name="productDiscription" id="" style="height: 100px;" required></input>
             <label>Product image</label>
-            <input type="file" value=" <?= $products['img'] ?>" name="productImage" accept="image/*" required>
+            <input type="file" name="productImage" accept="image/*" >
             <label>Product Quantity</label>
-            <input type="text" value=" <?= "1" ?>" name="productQuantity" required>
+            <input type="text" value=" <?= $products['Quantity'] ?>" name="productQuantity" required>
             <label>Product Price</label>
             <input type="float" value=" <?= $products['Price en DH'] ?>" name="productPrice" required>
             <label>Product Price</label>
@@ -96,7 +63,7 @@ include_once('dbconnection.php');
                     </option>
                     <?php
                 }
-                    ?>
+        ?>
             </select>
 
             <input type="submit" value="Edit product" name="edit_product">
