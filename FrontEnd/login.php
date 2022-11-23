@@ -17,31 +17,29 @@
 </head>
 
 <body class="text-center">
+    
     <!-- -->
         <form class="form">
             <img class="mb-4" src="images/Asset 1PlayTech_logo.svg" alt="" width="72" height="57">
-            <h1 class="h3 mb-3">Please sign in</h1>
+            <h1 class="h3">Please sign in</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email address</label>
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Password</label>
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
             </div>
 
             <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me 
-                </label>
+                <input type="checkbox" value="remember-me">
+                <label>Remember me</label> 
             </div>
-            <button class="button" type="submit">Sign in</button>
-            <p>&copy; 2022–2023</p>
+            <button class="button" type="submit"><a class="but" style="none" href="GestionProduits.php">Sign in</a></button>
+            <button class="button" type="submit"><a class="but" style="none" href="GestionProduits.php">Home</a></button>
+
+            <p> 2022–2023</p>
         </form>
-
-
-
 </body>
-
 </html>

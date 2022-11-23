@@ -36,9 +36,9 @@
                 </div>
             </div>
             <div class="icons">
-                <img src="images/assets/twitter.svg" alt="">
-                <img src="images/assets/facebook.svg" alt="">
-                <img src="images/assets/linkedin.svg" alt="">
+                <img src="images/twitter.svg" alt="">
+                <img src="images/facebook.svg" alt="">
+                <img src="images/linkedin.svg" alt="">
             </div>
         </div>
 

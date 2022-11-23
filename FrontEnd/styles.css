@@ -87,18 +87,10 @@ nav{
     background-color: aliceblue;
     color: #000000;
 }
-
-.filter li{
-    list-style: none;
-}
-
-.filter button{
-    border: 1px solid white;
-    background: none;
+.filter{
+    
+    width:fit-content;
     color: white;
-    padding: 2px 10px;
-    border-radius: 10px;
-
 }
 
 .products{
@@ -133,7 +125,7 @@ nav{
 }
 
 .productCard h4{
-    font-size: 14px;b
+    font-size: 14px;
 }
 
 
