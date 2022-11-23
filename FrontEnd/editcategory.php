@@ -22,9 +22,9 @@ include_once('dbconnection.php');
         <?php include('message.php') ?>
         <?php
 
-        if (isset($_GET['IDC'])) {
-            $category_id = mysqli_real_escape_string($con, $_GET['IDC']);
-            $query = "SELECT * from category where ID='$category_id'";
+        if (isset($_GET['ID'])) {
+            $category_id = mysqli_real_escape_string($con, $_GET['ID']);
+            $query = "SELECT * from category where IDC='$category_id'";
             $query_run = mysqli_query($con, $query);
 
             if (mysqli_num_rows($query_run) > 0) {
@@ -34,10 +34,10 @@ include_once('dbconnection.php');
 
         <a href="GestionProduits.php" class="back_btn"><img src="images/back.png"> Retour</a>
         <h2>Edit category</h2>
-        <form method="POST" enctype="multipart/form-data" action="updatecategory.php?ID=<?=  $_GET['IDC'] ?>">
+        <form method="POST" enctype="multipart/form-data" action="updatecategory.php">
             <input type="hidden" name="category_id" value="<?= $category_id ?>">
             <label>Category name</label>
-            <input type="text" value=" <?= $pcategory['catName'] ?>" name="catName" required>
+            <input type="text" value=" <?= $category['CatName'] ?>" name="catName" required>
             
             
                 <?php

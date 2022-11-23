@@ -61,6 +61,8 @@ include_once "connexion.php";
           <td>
             <?= $row['CatName'] ?>
           </td>
+          <td><a href="editcategory.php?ID=<?= $row['IDC'] ?>"><img class="hh" src="images/pen.png"></a></td>
+  
 
         </tr>
         <?php }
