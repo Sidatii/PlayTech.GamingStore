@@ -21,42 +21,74 @@
     <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, animi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos qui sint non autem? Molestiae ratione quae cum, nihil ipsum officia sed assumenda, eos at optio aperiam et accusamus odio asperiores.</h3>
   </div>
   <!-- change by mokh -->
-  <?php
-  include('connexion.php');
-  //requête pour afficher la liste des employés
-  $req = mysqli_query($conn, "SELECT * FROM category");
-
-  while ($row = mysqli_fetch_assoc($req)) {
-  ?>
-    <di class="filterbox w-10">
-      <button class="btn btn-outline-light"><?= $row['CatName'] ?></button>
+  <div class="filterbox w-10 ">
     <?php
-  }
-    ?>
-    </di>
-    <div class="products">
-  
-        <?php
-        include('connexion.php');
-        //requête pour afficher la liste des employés
-        $req = mysqli_query($conn, "SELECT * FROM produits");
+    include('connexion.php');
+    //requête pour afficher la liste des category
+    $req = mysqli_query($conn, "SELECT * FROM category");
 
+    while ($row = mysqli_fetch_assoc($req)) {
+      echo '<a class="btn btn-outline-light m-1" href="?category=' . $row["IDC"] . '">' . $row['CatName'] . '</a>';
+    }
+    ?>
+  </div>
+  <div class="products">
+
+    <?php
+    include('connexion.php');
+    //requête pour afficher la liste des produits
+    if (isset($_GET['category'])) {
+
+       {
+        if($_GET['category']==11){
+          $sql = "SELECT * FROM produits";
+      $req = mysqli_query($conn, $sql);
+      while ($row = mysqli_fetch_assoc($req)) {
+        echo '
+              <div class="productCard" style="width:300px; height:250px;">
+                <img src="' . $row['img'] . '" alt="product photo">
+                <h4>' . $row['ProductName'] . '</h4>
+                <h4>' . $row['Price en DH'] . ' dh</h4>
+                <h4>' . $row['Quantity'] . '</h4>
+              </div>
+              ';
+      }
+        }else{
+        $category = $_GET['category'];
+        $sql = "SELECT * FROM produits WHERE IDC = $category";
+        $req = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($req)) {
-        ?>
-            <div class="productCard" style="width:300px; height:250px;">
-          <img src="<?= $row['img'] ?>" alt="product photo">
-          <h4><?= $row['ProductName'] ?></h4>
-          <h4><?= $row['Price en DH'] ?>dh</h4>
-          <h4><?= $row['Quantity'] ?></h4>
-      </div>
-      <?php
+          echo '
+                <div class="productCard" style="width:300px; height:250px;">
+                  <img src="' . $row['img'] . '" alt="product photo">
+                  <h4>' . $row['ProductName'] . '</h4>
+                  <h4>' . $row['Price en DH'] . ' dh</h4>
+                  <h4>' . $row['Quantity'] . '</h4>
+                </div>';
         }
-        ?>
-    </div>
-        <!-- mokh change termine -->
-        <?php
-        include('footer.php');
-        ?>
+       }
+      }
+    }
+     else {
+      $sql = "SELECT * FROM produits";
+      $req = mysqli_query($conn, $sql);
+      while ($row = mysqli_fetch_assoc($req)) {
+        echo '
+              <div class="productCard" style="width:300px; height:250px;">
+                <img src="' . $row['img'] . '" alt="product photo">
+                <h4>' . $row['ProductName'] . '</h4>
+                <h4>' . $row['Price en DH'] . ' dh</h4>
+                <h4>' . $row['Quantity'] . '</h4>
+              </div>
+              ';
+      }
+    }
+    ?>
+  </div>
+  <!-- mokh change termine -->
+  <?php
+  include('footer.php');
+  ?>
 
 </body>
 
