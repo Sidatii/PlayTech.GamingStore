@@ -39,7 +39,7 @@ include_once('dbconnection.php');
             <label>Product name</label>
             <input type="text" value=" <?= $products['ProductName'] ?>" name="productName" required>
             <label>Product discription</label>
-            <input type="text" value=" <?= $products['Discription'] ?>" name="productDiscription" id="" style="height: 100px;" required></input>
+            <input class="discription" type="text" value=" <?= $products['Discription'] ?>" name="productDiscription" id="" style="height: 100px;" required></input>
             <label>Product image</label>
             <input type="file" name="productImage" accept="image/*" >
             <label>Product Quantity</label>

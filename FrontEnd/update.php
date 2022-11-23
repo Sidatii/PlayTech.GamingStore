@@ -17,7 +17,7 @@
 
         if ($filename == null ) {
 
-            $query = "UPDATE `produits` SET `ProductName`='$product_name', `Discription`='$product_discription', `Quantity`='$product_quantity', `Price en DH`='$product_price' WHERE ID='$product_id'";
+            $query = "UPDATE `produits` SET `ProductName`='$product_name', `Discription`='$product_discription', `Quantity`='$product_quantity', `Price en DH`='$product_price', `IDC`='$category_id' WHERE ID='$product_id'";
             
         } else{
            $query = "UPDATE `produits` SET `ProductName`='$product_name', `Discription`='$product_discription', `Quantity`='$product_quantity', `Price en DH`='$product_price', `IDC`='$category_id', `img`='$filename' WHERE ID='$product_id'";

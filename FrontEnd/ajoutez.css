@@ -112,3 +112,10 @@ input[type="submit"]{
     color: #fff;
     text-transform: uppercase;
 }
+
+.discription{
+    overflow: hidden;
+    object-fit: cover;
+    display: flex;
+    flex-wrap: wrap;
+}

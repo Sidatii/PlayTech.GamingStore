@@ -17,6 +17,7 @@
 </head>
 
 <body class="text-center">
+    
     <!-- -->
         <form class="form">
             <img class="mb-4" src="images/Asset 1PlayTech_logo.svg" alt="" width="72" height="57">
@@ -35,8 +36,10 @@
                 <input type="checkbox" value="remember-me">
                 <label>Remember me</label> 
             </div>
-            <button class="button" type="submit"><a style="none" href="GestionProduits.php">Sign in</a></button>
-            <p>&copy; 2022–2023</p>
+            <button class="button" type="submit"><a class="but" style="none" href="GestionProduits.php">Sign in</a></button>
+            <button class="button" type="submit"><a class="but" style="none" href="GestionProduits.php">Home</a></button>
+
+            <p> 2022–2023</p>
         </form>
 </body>
 </html>
