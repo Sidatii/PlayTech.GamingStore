@@ -43,10 +43,11 @@
         if($_GET['category']==11){
           $sql = "SELECT * FROM produits";
       $req = mysqli_query($conn, $sql);
+      $docimg="images/";
       while ($row = mysqli_fetch_assoc($req)) {
         echo '
               <div class="productCard" style="width:300px; height:250px;">
-                <img src="' . $row['img'] . '" alt="product photo">
+                <img src="'.$docimg. $row['img'] . '" alt="product photo">
                 <h4>' . $row['ProductName'] . '</h4>
                 <h4>' . $row['Price en DH'] . ' dh</h4>
                 <h4>' . $row['Quantity'] . '</h4>
@@ -57,10 +58,11 @@
         $category = $_GET['category'];
         $sql = "SELECT * FROM produits WHERE IDC = $category";
         $req = mysqli_query($conn, $sql);
+        $docimg="images/";
         while ($row = mysqli_fetch_assoc($req)) {
           echo '
                 <div class="productCard" style="width:300px; height:250px;">
-                  <img src="' . $row['img'] . '" alt="product photo">
+                  <img src="' .$docimg. $row['img'] . '" alt="product photo">
                   <h4>' . $row['ProductName'] . '</h4>
                   <h4>' . $row['Price en DH'] . ' dh</h4>
                   <h4>' . $row['Quantity'] . '</h4>
@@ -72,10 +74,11 @@
      else {
       $sql = "SELECT * FROM produits";
       $req = mysqli_query($conn, $sql);
+      $docimg="images/";
       while ($row = mysqli_fetch_assoc($req)) {
         echo '
               <div class="productCard" style="width:300px; height:250px;">
-                <img src="' . $row['img'] . '" alt="product photo">
+                <img src="' .$docimg. $row['img'] . '" alt="product photo">
                 <h4>' . $row['ProductName'] . '</h4>
                 <h4>' . $row['Price en DH'] . ' dh</h4>
                 <h4>' . $row['Quantity'] . '</h4>
