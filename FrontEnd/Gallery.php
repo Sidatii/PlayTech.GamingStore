@@ -48,6 +48,7 @@
           <h4><?= $row['ProductName'] ?></h4>
           <h4><?= $row['Price en DH'] ?> DH</h4>
           <h4><?= $row['Quantity'] ?></h4>
+          <h4><?= $row['Discription'] ?></h4>
       </div>
       <?php
         }
