@@ -24,8 +24,11 @@
     <?php
     include('connexion.php');
     //requête pour afficher la liste des category
-    $req = mysqli_query($conn, "SELECT * FROM category");
-
+    $res = mysqli_query($conn, "SELECT `IDC`, `CatName` FROM `category` WHERE IDC = 1");
+    if ($row = mysqli_fetch_assoc($res)) {
+      echo '<a class="btn btn-outline-light m-1" href="?category=' . $row["IDC"] . '">' . $row['CatName'] . '</a>';
+    }
+    $req = mysqli_query($conn, "SELECT c.* ,p.IDC FROM category c , produits p WHERE c.IDC = p.IDC");
     while ($row = mysqli_fetch_assoc($req)) {
       echo '<a class="btn btn-outline-light m-1" href="?category=' . $row["IDC"] . '">' . $row['CatName'] . '</a>';
     }
@@ -36,48 +39,45 @@
     <?php
     include('connexion.php');
     //requête pour afficher la liste des produits
-    if (isset($_GET['category'])) {
-
-       {
-        if($_GET['category']==1){
+    if (isset($_GET['category'])) { {
+        if ($_GET['category'] == 1) {
           $sql = "SELECT * FROM produits";
-      $req = mysqli_query($conn, $sql);
-      $docimg="image/";
-      while ($row = mysqli_fetch_assoc($req)) {
-        echo '
+          $req = mysqli_query($conn, $sql);
+          $docimg = "image/";
+          while ($row = mysqli_fetch_assoc($req)) {
+            echo '
               <div class="productCard" style="width:300px; height:250px;">
-                <img src="'.$docimg. $row['img'] . '" alt="product photo">
+                <img src="' . $docimg . $row['img'] . '" alt="product photo">
                 <h4>' . $row['ProductName'] . '</h4>
                 <h4>' . $row['Price en DH'] . ' dh</h4>
                 <h4>' . $row['Quantity'] . '</h4>
               </div>
               ';
-      }
-        }else{
-        $category = $_GET['category'];
-        $sql = "SELECT * FROM produits WHERE IDC = $category";
-        $req = mysqli_query($conn, $sql);
-        $docimg="image/";
-        while ($row = mysqli_fetch_assoc($req)) {
-          echo '
+          }
+        } else {
+          $category = $_GET['category'];
+          $sql = "SELECT * FROM produits WHERE IDC = $category";
+          $req = mysqli_query($conn, $sql);
+          $docimg = "image/";
+          while ($row = mysqli_fetch_assoc($req)) {
+            echo '
                 <div class="productCard" style="width:300px; height:250px;">
-                  <img src="' .$docimg. $row['img'] . '" alt="product photo">
+                  <img src="' . $docimg . $row['img'] . '" alt="product photo">
                   <h4>' . $row['ProductName'] . '</h4>
                   <h4>' . $row['Price en DH'] . ' dh</h4>
                   <h4>' . $row['Quantity'] . '</h4>
                 </div>';
+          }
         }
-       }
       }
-    }
-     else {
+    } else {
       $sql = "SELECT * FROM produits";
       $req = mysqli_query($conn, $sql);
-      $docimg="image/";
+      $docimg = "image/";
       while ($row = mysqli_fetch_assoc($req)) {
         echo '
               <div class="productCard" style="width:300px; height:250px;">
-                <img src="' .$docimg. $row['img'] . '" alt="product photo">
+                <img src="' . $docimg . $row['img'] . '" alt="product photo">
                 <h4>' . $row['ProductName'] . '</h4>
                 <h4>' . $row['Price en DH'] . ' dh</h4>
                 <h4>' . $row['Quantity'] . '</h4>
