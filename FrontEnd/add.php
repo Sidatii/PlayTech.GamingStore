@@ -75,8 +75,7 @@ include_once('dbconnection.php');
                 include('dbconnection.php');
                 //requête pour afficher la liste des employés
                 $req = mysqli_query($con, "SELECT * FROM category");
-
-                while ($row = mysqli_fetch_assoc($req)) {
+                while ($row = mysqli_fetch_assoc($req)){
                 ?>
                 <di class="filterbox w-10">
 
