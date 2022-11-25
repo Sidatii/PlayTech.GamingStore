@@ -6,7 +6,7 @@
 }
 
 .body {
-    background: linear-gradient(122.71deg, #000000 0%, #00057C 89.58%, #000AF9 100%);
+    background: linear-gradient(122.71deg, #3A6186 0%, #89253E 89.58%);
     background-repeat: no-repeat;
 }
 
@@ -15,15 +15,17 @@
 }
 
 .card {
-    box-shadow: 0px 2px 11px 2px #F90606;
+    box-shadow: 1px 1px 1px 1px gray;
+    color: #3A6186;
 }
 
 .navbar {
     top: 0%;
-    background-color: #000000a4;
+    /* background-color: #a61515d7; */
     position: fixed;
     width: 100%;
-    z-index: 123467890;
+    z-index: 12;
+    
 }
 nav{
     padding-left: 20px !important;
@@ -179,6 +181,12 @@ nav{
     width: 100px;
 }
 
+.navbar-toggler{
+    /* background-color: rgb(19, 75, 123);
+    z-index: -5;
+    color: #00057C; */
+}
+
 .navbar-toggler-icon{
-    background-color: aliceblue;
+    display: flex;
 }

@@ -16,11 +16,8 @@ include_once('dbconnection.php');
 
 <body>
 
-    
-
     <div class="form" style="margin-top:20px;">
-        <?php include('message.php') ?>
-        <?php
+        <?php include('message.php'); 
 
         if (isset($_GET['ID'])) {
             $category_id = mysqli_real_escape_string($con, $_GET['ID']);
@@ -32,26 +29,18 @@ include_once('dbconnection.php');
         ?>
 
 
-        <a href="GestionProduits.php" class="back_btn"><img src="images/back.png"> Retour</a>
-        <h2>Edit category</h2>
-        <form method="POST" enctype="multipart/form-data" action="updatecategory.php">
-            <input type="hidden" name="category_id" value="<?= $category_id ?>">
-            <label>Category name</label>
-            <input type="text" value=" <?= $category['CatName'] ?>" name="catName" required>
+            <a href="GestionProduits.php" class="back_btn"><img src="images/back.png"> Retour</a>
+            <h2>Edit category</h2>
+            <form action="updateCategory.php?ID=<?=  $_GET['ID'] ?>" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="category_id" value="<?= $category_id ?>">
+                <label>Category name</label>
+                <input type="text" value=" <?= $category['CatName'] ?>" name="catName" required>
             
-            
-                <?php
-                include('dbconnection.php');
-                $req = mysqli_query($con, "SELECT * FROM category");
-
-                while ($row = mysqli_fetch_assoc($req)) {
-                ?>
                 <di class="filterbox w-10">
 
-                    <?php
+        <?php
                 }
         ?>
-            </select>
 
             <input type="submit" value="Edit category" name="edit_category">
         </form>
@@ -61,7 +50,6 @@ include_once('dbconnection.php');
             } else {
                 echo "ID not found";
             }
-        }
         ?>
 
     </div>

@@ -13,8 +13,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&family=Titillium+Web&display=swap" rel="stylesheet">
   </head>
 <body>
-<nav class="navbar navbar-expand-lg navb">
-    <a class="navbar-brand" href="index.php"><img src="images/Asset 1PlayTech_logo.svg" alt="PlayTech logo" width="60px"></a>
+<nav class="navbar navbar-expand-lg navb navbar1">
+    <a class="navbar-brand" href="index.php"><img src="images/playtech_logo.svg" alt="PlayTech logo" width="60px"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

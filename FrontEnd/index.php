@@ -34,7 +34,7 @@
                     <H3 class="text-light " style="display: flex; flex-direction:column; align-items:center;">TOP SALES</H3>
                 </div>
                 <div class="row ">
-                    <div class="card  col-lg-4 m-3" style="width: 15rem; background:#00057C;">
+                    <div class="card  col-lg-4 m-3 cardd" style="width: 15rem; background:#00057C;">
                         <img src="images/test.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-light">Card title</h5>
