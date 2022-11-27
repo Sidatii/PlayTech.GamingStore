@@ -10,6 +10,7 @@ include_once "connexion.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <style>
       input {
@@ -34,9 +35,10 @@ include_once "connexion.php";
     <div class="container">
     <?php include('message.php'); ?>
       <!-- categorie table  -->
-      <table class="table table-bordered bg-light text-center">
+      <table class="table table0">
         <thead>
           <th colspan="4">
+          <!-- colspan="4" -->
             <h3>catégorie</h3>
             <?php
             //requête pour afficher la liste des employés
@@ -50,6 +52,7 @@ include_once "connexion.php";
         <tr>
           <th>IDC</th>
           <th>CatName</th>
+          <th>Action</th>
         </tr>
         <tr>
           <?php
@@ -62,22 +65,21 @@ include_once "connexion.php";
           <td>
             <?= $row['CatName'] ?>
           </td>
-          <td><a href="editcategory.php?ID=<?= $row['IDC'] ?>"><img class="hh" src="images/pen.png"></a></td>
-  
-
+          <td>
+            <a href="editcategory.php?ID=<?= $row['IDC'] ?>"><img class="hh" src="images/pen.png"></a>
+          </td>
         </tr>
         <?php }
             } ?>
 
         <tr>
-          <td colspan="7"><a href="addcat.php">ajouter</a></td>
-
+          <td class="preactions" colspan="7"><a class="actions" href="addcat.php">Ajouter</a></td>
         </tr>
 
 
       </table>
       <!-- produit table  -->
-      <table class="table table-bordered bg-light text-center">
+      <table class="table table0">
         <thead>
           <?php include('message.php'); ?>
           <th colspan="8">
@@ -95,11 +97,10 @@ include_once "connexion.php";
               <tr>
                 <th>id</th>
                 <th>Name</th>
-                <th>prix en DH</th>
+                <th>prix</th>
                 <th>quantité</th>
                 <th>images</th>
-                <th>Modifier</th>
-                <th>Supprimer</th>
+                <th>Action</th>
               </tr>
               <?php
               //si non , affichons la liste de tous les employés
@@ -120,15 +121,17 @@ include_once "connexion.php";
                 </td>
                 <td><img src="./image/<?php echo $row['img']; ?>"></td>
                 <!--Nous alons mettre l'id de chaque employé dans ce lien -->
-                <td><a href="editproduct.php?ID=<?= $row['ID'] ?>"><img class="hh" src="images/pen.png"></a></td>
-                <td><a href="supprimer.php?ID=<?= $row['ID'] ?>"><img class="hh" src="images/trash.png"></a></td>
+                <td>
+                  <a href="editproduct.php?ID=<?= $row['ID'] ?>"><img class="hh" src="images/pen.png" style="margin-right: 5px;"></a>
+                  <a href="supprimer.php?ID=<?= $row['ID'] ?>"><img class="hh" src="images/trash.png"></a>
+                </td>
               </tr>
               <?php
               }
             }
             ?>
         <tr>
-          <td colspan="7"><a href="add.php">ajouter</a></td>
+          <td colspan="7"><a class="actions" href="add.php">Ajouter</a></td>
         </tr>
       </table>
     </div>

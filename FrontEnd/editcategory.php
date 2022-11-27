@@ -14,7 +14,8 @@ include_once('dbconnection.php');
     <title>Edit category</title>
 </head>
 
-<body>
+<body style="background: linear-gradient(122.71deg, #3A6186 0%, #89253E 89.58%);
+  background-repeat: no-repeat; height: 100vh">
 
     <div class="form" style="margin-top:20px;">
         <?php include('message.php'); 
