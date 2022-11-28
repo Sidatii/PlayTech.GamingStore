@@ -9,7 +9,7 @@
 <body>
         <div class="footer1" >
             <div class="logof">
-                <img src="images/Asset 1PlayTech_logo.svg" alt="">
+                <img src="images/playtech_logo.svg" alt="" style="width: 50px;">
             </div>
             <div class="links">
                 <div class="main">
