@@ -5,8 +5,8 @@ include_once('dbconnection.php');
 <html lang="en">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shotcut icon" type="image/x-icon" href="images/playtech_logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="ajoutez.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@ include_once('dbconnection.php');
 <body style="background: linear-gradient(122.71deg, #3A6186 0%, #89253E 89.58%);
   background-repeat: no-repeat; height: 100vh">
 
-    
+
 
     <div class="form" style="margin-top:20px;">
         <?php include('message.php') ?>
@@ -33,45 +33,45 @@ include_once('dbconnection.php');
         ?>
 
 
-        <a href="GestionProduits.php" class="back_btn"><img src="images/back.png"> Retour</a>
-        <h2>Edit product</h2>
-        <form method="POST" enctype="multipart/form-data" action="update.php?ID=<?=  $_GET['ID'] ?>">
-            <input type="hidden" name="product_id" value="<?= $product_id ?>">
-            <label>Product name</label>
-            <input type="text" value=" <?= $products['ProductName'] ?>" name="productName" required>
-            <label>Product discription</label>
-            <input class="discription" type="text" value=" <?= $products['Discription'] ?>" name="productDiscription" id="" style="height: 100px;" required></input>
-            <label>Product image</label>
-            <input type="file" name="productImage" accept="image/*" >
-            <label>Product Quantity</label>
-            <input type="text" value=" <?= $products['Quantity'] ?>" name="productQuantity" required>
-            <label>Product Price</label>
-            <input type="float" value=" <?= $products['Price en DH'] ?>" name="productPrice" required>
-            <label>Product Price</label>
+                <a href="GestionProduits.php" class="back_btn"><img src="images/back.png"> Retour</a>
+                <h2>Edit product</h2>
+                <form method="POST" enctype="multipart/form-data" action="update.php?ID=<?= $_GET['ID'] ?>">
+                    <input type="hidden" name="product_id" value="<?= $product_id ?>">
+                    <label>Product name</label>
+                    <input type="text" value=" <?= $products['ProductName'] ?>" name="productName" required>
+                    <label>Product discription</label>
+                    <input class="discription" type="text" value=" <?= $products['Discription'] ?>" name="productDiscription" id="" style="height: 100px;" required></input>
+                    <label>Product image</label>
+                    <input type="file" name="productImage" accept="image/*">
+                    <label>Product Quantity</label>
+                    <input type="text" value=" <?= $products['Quantity'] ?>" name="productQuantity" required>
+                    <label>Product Price</label>
+                    <input type="float" value=" <?= $products['Price en DH'] ?>" name="productPrice" required>
+                    <label>Product Price</label>
 
-            <select name="IDC" id="">
-            
-            <?php
-            include('dbconnection.php');
-            //requête pour afficher la liste des employés
-            $req = mysqli_query($con, "SELECT * FROM category");
+                    <select name="IDC" id="">
 
-            while ($row = mysqli_fetch_assoc($req)) {
-            ?>
-            <di class="filterbox w-10">
+                        <?php
+                        include('dbconnection.php');
+                        //requête pour afficher la liste des employés
+                        $req = mysqli_query($con, "SELECT * FROM category");
 
-            <option value="<?= $row['IDC'] ?>">
-            <?= $row['CatName'] ?>
-            </option>
-            <?php
-            }
-            ?>
-            </select>
+                        while ($row = mysqli_fetch_assoc($req)) {
+                        ?>
+                            <di class="filterbox w-10">
 
-            <input type="submit" value="Edit product" name="edit_product">
-        </form>
+                                <option value="<?= $row['IDC'] ?>">
+                                    <?= $row['CatName'] ?>
+                                </option>
+                            <?php
+                        }
+                            ?>
+                    </select>
 
-            <?php
+                    <input type="submit" value="Edit product" name="edit_product">
+                </form>
+
+        <?php
 
             } else {
                 echo "ID not found";

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="shotcut icon" type="image/x-icon" href="images/playtech_logo.svg">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -14,31 +15,31 @@
     <!-- Custom styles for this template -->
 </head>
 
-<body class="text-center" style="background: linear-gradient(122.71deg, #3A6186 0%, #89253E 89.58%);
-  background-repeat: no-repeat; height: 100vh">
-    
+<body class="text-center" style="background: linear-gradient(122.71deg, #3A6186 1%, #89253E 89.58%); background-repeat: no-repeat;">
+
     <!-- -->
-        <form class="form">
-            <img class="mb-4" src="images/playtech_logo.svg" alt="" width="72" height="57">
-            <h1 class="h3">Please sign in</h1>
+    <form class="form">
+        <img class="mb-4" src="images/playtech_logo.svg" alt="" width="72" height="57">
+        <h1 class="h3">Please sign in</h1>
 
-            <div class="form-floating">
-                <label for="floatingInput">Email address</label>
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            </div>
-            <div class="form-floating">
-                <label for="floatingPassword">Password</label>
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            </div>
+        <div class="form-floating">
+            <label for="floatingInput">Email address</label>
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        </div>
+        <div class="form-floating">
+            <label for="floatingPassword">Password</label>
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        </div>
 
-            <div class="checkbox">
-                <input type="checkbox" value="remember-me">
-                <label>Remember me</label> 
-            </div>
-            <a class="but" style="none" href="GestionProduits.php">Sign in</a>
-            <a class="but" style="none" href="index.php">Home</a>
+        <div class="checkbox">
+            <input type="checkbox" value="remember-me">
+            <label>Remember me</label>
+        </div>
+        <a class="but" style="text-decoration:none;" href="GestionProduits.php">Sign in</a>
+        <a class="but" style="text-decoration:none;" href="index.php">Home</a>
 
-            <p>@PlayTech 2022 | all rights reserved</p>
-        </form>
+        <p>@PlayTech 2022 | all rights reserved</p>
+    </form>
 </body>
+
 </html>

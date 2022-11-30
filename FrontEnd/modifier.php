@@ -11,11 +11,11 @@
 <?php
 
          //connexion à la base de donnée
-          include_once "connexion.php";
+          include_once "dbconnexion.php";
          //on récupère le id dans le lien
           $id = $_GET['ID'];
           //requête pour afficher les infos d'un employé
-          $req = mysqli_query($conn , "SELECT * FROM produits WHERE ID = $id");
+          $req = mysqli_query($con , "SELECT * FROM produits WHERE ID = $id");
           $row = mysqli_fetch_assoc($req);
 
 

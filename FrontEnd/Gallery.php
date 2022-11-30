@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="shotcut icon" type="image/x-icon" href="images/playtech_logo.svg">
   <link rel="stylesheet" href="styles.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,9 +27,9 @@
   <center>
     <div class="filterbox w-10 filter0">
       <?php
-      include('connexion.php');
+      include('dbconnection.php');
       //requête pour afficher la liste des category
-      $req = mysqli_query($conn, "SELECT * FROM category");
+      $req = mysqli_query($con, "SELECT * FROM category");
 
       while ($row = mysqli_fetch_assoc($req)) {
         echo '<a class="btn btn-outline-light m-1 filter" href="?category=' . $row["IDC"] . '">' . $row['CatName'] . '</a>';
@@ -40,52 +41,71 @@
   <div class="products">
 
     <?php
-    include('connexion.php');
+    include('dbconnection.php');
     //requête pour afficher la liste des produits
     if (isset($_GET['category'])) { {
         if ($_GET['category'] == 1) {
           $sql = "SELECT * FROM produits";
-          $req = mysqli_query($conn, $sql);
+          $req = mysqli_query($con, $sql);
           $docimg = "image/";
           while ($row = mysqli_fetch_assoc($req)) {
-            echo '
-              <div class="productCard" style="width:300px; height:250px;">
-                <img src="' . $docimg . $row['img'] . '" alt="product photo">
-                <h4>' . $row['ProductName'] . '</h4>
-                <h4>' . $row['Price en DH'] . ' dh</h4>
-                <h4>' . $row['Quantity'] . '</h4>
-              </div>
-              ';
+            ?>
+            <div class="productCard" style="width:300px; height:250px;">
+            <div class="prudName">
+              <h3><?= $row['ProductName']  ?></h3>
+            </div>
+            <div class="prudImg">
+              <img src="<?= $docimg . $row['img']  ?>" alt="product photo">
+            </div>
+            <div class="prodPrice">
+              <h4><?=  $row['Price en DH'] ?> dh</h4>
+            </div>
+              <h4><?= $row['Quantity'] ?></h4>
+            </div>;
+    <?php
           }
         } else {
           $category = $_GET['category'];
           $sql = "SELECT * FROM produits WHERE IDC = $category";
-          $req = mysqli_query($conn, $sql);
+          $req = mysqli_query($con, $sql);
           $docimg = "image/";
           while ($row = mysqli_fetch_assoc($req)) {
-            echo '
-                <div class="productCard" style="width:300px; height:250px;">
-                  <img src="' . $docimg . $row['img'] . '" alt="product photo">
-                  <h4>' . $row['ProductName'] . '</h4>
-                  <h4>' . $row['Price en DH'] . ' dh</h4>
-                  <h4>' . $row['Quantity'] . '</h4>
-                </div>';
+            ?>
+            <div class="productCard" style="width:300px; height:250px;">
+            <div class="prudName">
+              <h3><?= $row['ProductName']  ?></h3>
+            </div>
+            <div class="prudImg">
+              <img src="<?= $docimg . $row['img']  ?>" alt="product photo">
+            </div>
+            <div class="prodPrice">
+              <h4><?=  $row['Price en DH'] ?> dh</h4>
+            </div>
+              <h4><?= $row['Quantity'] ?></h4>
+            </div>;
+    <?php
           }
         }
       }
     } else {
       $sql = "SELECT * FROM produits";
-      $req = mysqli_query($conn, $sql);
+      $req = mysqli_query($con, $sql);
       $docimg = "image/";
-      while ($row = mysqli_fetch_assoc($req)) {
-        echo '
-              <div class="productCard" style="width:300px; height:250px;">
-                <img src="' . $docimg . $row['img'] . '" alt="product photo">
-                <h4>' . $row['ProductName'] . '</h4>
-                <h4>' . $row['Price en DH'] . ' dh</h4>
-                <h4> Qty: '  . $row['Quantity'] . '</h4>
-              </div>
-              ';
+      while ($row = mysqli_fetch_assoc($req)) { 
+        ?>
+          <div class="productCard" style="width:300px; height:250px;">
+          <div class="prudName">
+            <h3><?= $row['ProductName']  ?></h3>
+          </div>
+          <div class="prudImg">
+            <img src="<?= $docimg . $row['img']  ?>" alt="product photo">
+          </div>
+          <div class="prodPrice">
+            <h4><?=  $row['Price en DH'] ?> dh</h4>
+          </div>
+            <h4><?= $row['Quantity'] ?></h4>
+          </div>;
+<?php
       }
     }
     ?>
@@ -98,3 +118,6 @@
 </body>
 
 </html>
+<div class="img"></div>
+<div class="prudName"></div>
+<div class="prodPrice"></div>

@@ -5,8 +5,8 @@ include_once('dbconnection.php');
 <html lang="en">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shotcut icon" type="image/x-icon" href="images/playtech_logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="ajoutez.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,12 +22,12 @@ include_once('dbconnection.php');
 
     if (isset($_POST['add_category'])) {
         $product_name = mysqli_real_escape_string($con, $_POST['productName']);
-       
+
         $query = "INSERT INTO `category` ( `CatName`)
          VALUES ('$product_name')";
 
         $query_run = mysqli_query($con, $query);
-        
+
         if ($query_run) {
             $_SESSION['message'] = "category added successfully";
             header("Location: addcat.php");
@@ -42,11 +42,11 @@ include_once('dbconnection.php');
     ?>
 
     <div class="form" style="margin-top:20px;">
-    <?php include('message.php') ?>
+        <?php include('message.php') ?>
 
         <a href="GestionProduits.php" class="back_btn"><img src="images/back.png"> Retour</a>
         <h2>Add new product</h2>
-        <form method="POST"  enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data">
             <label>Product name</label>
             <input type="text" name="productName" required>
 

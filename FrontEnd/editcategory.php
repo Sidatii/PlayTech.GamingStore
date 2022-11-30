@@ -5,8 +5,8 @@ include_once('dbconnection.php');
 <html lang="en">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shotcut icon" type="image/x-icon" href="images/playtech_logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="ajoutez.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@ include_once('dbconnection.php');
   background-repeat: no-repeat; height: 100vh">
 
     <div class="form" style="margin-top:20px;">
-        <?php include('message.php'); 
+        <?php include('message.php');
 
         if (isset($_GET['ID'])) {
             $category_id = mysqli_real_escape_string($con, $_GET['ID']);
@@ -30,28 +30,28 @@ include_once('dbconnection.php');
         ?>
 
 
-            <a href="GestionProduits.php" class="back_btn"><img src="images/back.png"> Retour</a>
-            <h2>Edit category</h2>
-            <form action="updateCategory.php?ID=<?=  $_GET['ID'] ?>" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="category_id" value="<?= $category_id ?>">
-                <label>Category name</label>
-                <input type="text" value=" <?= $category['CatName'] ?>" name="catName" required>
-            
-                <di class="filterbox w-10">
+                <a href="GestionProduits.php" class="back_btn"><img src="images/back.png"> Retour</a>
+                <h2>Edit category</h2>
+                <form action="updateCategory.php?ID=<?= $_GET['ID'] ?>" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="category_id" value="<?= $category_id ?>">
+                    <label>Category name</label>
+                    <input type="text" value=" <?= $category['CatName'] ?>" name="catName" required>
 
-        <?php
+                    <di class="filterbox w-10">
+
+                    <?php
                 }
-        ?>
+                    ?>
 
-            <input type="submit" value="Edit category" name="edit_category">
-        </form>
+                    <input type="submit" value="Edit category" name="edit_category">
+                </form>
 
-        <?php
+            <?php
 
-            } else {
-                echo "ID not found";
-            }
-        ?>
+        } else {
+            echo "ID not found";
+        }
+            ?>
 
     </div>
 

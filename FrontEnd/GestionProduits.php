@@ -1,11 +1,12 @@
 <?php
 session_start();
-include_once "connexion.php";
+include_once "dbconnection.php";
 ?>
 <!DOCTYPEhtml>
-    <html lang="en">
+  <html lang="en">
 
   <head>
+    <link rel="shotcut icon" type="image/x-icon" href="images/playtech_logo.svg">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,33 +21,35 @@ include_once "connexion.php";
         background: none;
       }
 
-            img {
-                height: 25px;
-            }
-        </style>
-    </head>
+      img {
+        height: 25px;
+      }
+    </style>
+  </head>
 
-    <body class="body">
+  <body class="body">
 
     <?php
     include('navbar.php');
     ?>
     <br><br><br>
     <div class="container">
-    <?php include('message.php'); ?>
+      <?php include('message.php'); ?>
       <!-- categorie table  -->
       <table class="table table0">
         <thead>
-          <th colspan="4">
-          <!-- colspan="4" -->
+          <th colspan="3">
+            <!-- colspan="4" -->
             <h3>catégorie</h3>
             <?php
-            //requête pour afficher la liste des employés
-            $req = mysqli_query($conn, "SELECT * FROM category");
+            //requête pour afficher la liste des category
+            $req = mysqli_query($con, "SELECT * FROM category");
             if (mysqli_num_rows($req) == 0) {
-              //s'il n'existe pas d'employé dans la base de donné , alors on affiche ce message :
+              //s'il n'existe pas d'category dans la base de donné , alors on affiche ce message :
               echo "Il n'y a pas encore de category ajouter !";
-            } else { ?>
+            } else {
+              //si non , affichons la liste 
+            ?>
           </th>
         </thead>
         <tr>
@@ -58,23 +61,23 @@ include_once "connexion.php";
           <?php
               //si non , affichons la liste 
               while ($row = mysqli_fetch_assoc($req)) {
-            ?>
-          <td>
-            <?= $row['IDC'] ?>
-          </td>
-          <td>
-            <?= $row['CatName'] ?>
-          </td>
-          <td>
-            <a href="editcategory.php?ID=<?= $row['IDC'] ?>"><img class="hh" src="images/pen.png"></a>
-          </td>
+          ?>
+            <td>
+              <?= $row['IDC'] ?>
+            </td>
+            <td>
+              <?= $row['CatName'] ?>
+            </td>
+            <td>
+              <a href="editcategory.php?ID=<?= $row['IDC'] ?>"><img class="hh" src="images/pen.png"></a>
+            </td>
         </tr>
-        <?php }
-                        } ?>
+    <?php }
+            } ?>
 
-        <tr>
-          <td class="preactions" colspan="7"><a class="actions" href="addcat.php">Ajouter</a></td>
-        </tr>
+    <tr>
+      <td class="preactions" colspan="7"><a class="actions" href="addcat.php">Ajouter</a></td>
+    </tr>
 
 
       </table>
@@ -85,60 +88,60 @@ include_once "connexion.php";
           <th colspan="8">
             <h3>produit</h3>
             <?php
-            //requête pour afficher la liste des employés
-            $req = mysqli_query($conn, "SELECT * FROM produits");
+            //requête pour afficher la liste des produits
+            $req = mysqli_query($con, "SELECT * FROM produits");
             if (mysqli_num_rows($req) == 0) {
               //s'il n'existe pas de produits dans la base de donné , alors on affiche ce message :
               echo "Il n'y a pas encore de produits ajoutés !";
             } else {
+              //si non , affichons la liste de tous les produits
             ?>
-              </th>
-              </thead>
-              <tr>
-                <th>id</th>
-                <th>Name</th>
-                <th>prix</th>
-                <th>quantité</th>
-                <th>images</th>
-                <th>Action</th>
-              </tr>
-              <?php
-              //si non , affichons la liste de tous les employés
+          </th>
+        </thead>
+        <tr>
+          <th>id</th>
+          <th>Name</th>
+          <th>prix</th>
+          <th>quantité</th>
+          <th>images</th>
+          <th>Action</th>
+        </tr>
+        <?php
               while ($row = mysqli_fetch_assoc($req)) {
-            ?>
-              <tr>
-                <td>
-                  <?= $row['ID'] ?>
-                </td>
-                <td>
-                  <?= $row['ProductName'] ?>
-                </td>
-                <td>
-                  <?= $row['Price en DH'] ?>
-                </td>
-                <td>
-                  <?= $row['Quantity'] ?>
-                </td>
-                <td><img src="./image/<?php echo $row['img']; ?>"></td>
-                <!--Nous alons mettre l'id de chaque employé dans ce lien -->
-                <td>
-                  <a href="editproduct.php?ID=<?= $row['ID'] ?>"><img class="hh" src="images/pen.png" style="margin-right: 5px;"></a>
-                  <a href="supprimer.php?ID=<?= $row['ID'] ?>"><img class="hh" src="images/trash.png"></a>
-                </td>
-              </tr>
-              <?php
+        ?>
+          <tr>
+            <td>
+              <?= $row['ID'] ?>
+            </td>
+            <td>
+              <?= $row['ProductName'] ?>
+            </td>
+            <td>
+              <?= $row['Price en DH'] ?>
+            </td>
+            <td>
+              <?= $row['Quantity'] ?>
+            </td>
+            <td><img src="./image/<?php echo $row['img']; ?>"></td>
+            <td>
+              <!--Nous alons mettre l'id de chaque produits dans ce lien (editproduct.php?ID=)pour modifier -->
+              <a href="editproduct.php?ID=<?= $row['ID'] ?>"><img class="hh" src="images/pen.png" style="margin-right: 5px;"></a>
+              <!--Nous alons mettre l'id de chaque produits dans ce lien (editproduct.php?ID=)pour supprimer -->
+              <a href="supprimer.php?ID=<?= $row['ID'] ?>"><img class="hh" src="images/trash.png"></a>
+            </td>
+          </tr>
+      <?php
               }
             }
-            ?>
-        <tr>
-          <td colspan="7"><a class="actions" href="add.php">Ajouter</a></td>
-        </tr>
+      ?>
+      <tr>
+        <td colspan="7"><a class="actions" href="add.php">Ajouter</a></td>
+      </tr>
       </table>
     </div>
 
 
 
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script> -->
-    </body>
+  </body>
 
-    </html>
+  </html>

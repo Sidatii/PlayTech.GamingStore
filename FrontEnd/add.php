@@ -5,8 +5,8 @@ include_once('dbconnection.php');
 <html lang="en">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shotcut icon" type="image/x-icon" href="images/playtech_logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="ajoutez.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,19 +28,19 @@ include_once('dbconnection.php');
         $product_price = mysqli_real_escape_string($con, $_POST['productPrice']);
         $category_id = mysqli_real_escape_string($con, $_POST['IDC']);
 
-        
-	$filename = $_FILES["productImage"]["name"];
-	$tempname = $_FILES["productImage"]["tmp_name"];
-	$folder = "./image/" . $filename;
 
-	// Now let's move the uploaded image into the folder: image
-	move_uploaded_file($tempname, $folder);
+        $filename = $_FILES["productImage"]["name"];
+        $tempname = $_FILES["productImage"]["tmp_name"];
+        $folder = "./image/" . $filename;
+
+        // Now let's move the uploaded image into the folder: image
+        move_uploaded_file($tempname, $folder);
 
         $query = "INSERT INTO `produits` ( `ProductName`, `Discription`, `Quantity`, `Price en DH`, `IDC`, `img`)
          VALUES ('$product_name', '$product_discription', $product_quantity, $product_price, $category_id, '$filename')";
 
         $query_run = mysqli_query($con, $query);
-        
+
         if ($query_run) {
             $_SESSION['message'] = "Product added successfully";
             header("Location: add.php");
@@ -55,11 +55,11 @@ include_once('dbconnection.php');
     ?>
 
     <div class="form" style="margin-top:20px;">
-    <?php include('message.php') ?>
+        <?php include('message.php') ?>
 
         <a href="GestionProduits.php" class="back_btn"><img src="images/back.png"> Retour</a>
         <h2>Add new product</h2>
-        <form method="POST"  enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data">
             <label>Product name</label>
             <input type="text" name="productName" required>
             <label>Product discription</label>
@@ -76,13 +76,13 @@ include_once('dbconnection.php');
                 include('dbconnection.php');
                 //requête pour afficher la liste des employés
                 $req = mysqli_query($con, "SELECT * FROM category");
-                while ($row = mysqli_fetch_assoc($req)){
+                while ($row = mysqli_fetch_assoc($req)) {
                 ?>
-                <di class="filterbox w-10">
+                    <di class="filterbox w-10">
 
-                    <option value="<?= $row['IDC'] ?>">
-                        <?= $row['CatName'] ?>
-                    </option>
+                        <option value="<?= $row['IDC'] ?>">
+                            <?= $row['CatName'] ?>
+                        </option>
                     <?php
                 }
                     ?>
