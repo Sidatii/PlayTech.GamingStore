@@ -336,9 +336,11 @@ hr{
     align-content: center;
     justify-content: center;
   }
-/* .preactions{
-    border: none !important;
-} */
+  
+.table0 a{
+    
+}
+
 
 .actions{
     text-decoration: none;

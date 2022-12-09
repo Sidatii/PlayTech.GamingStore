@@ -45,8 +45,8 @@ include_once('dbconnection.php');
         <?php include('message.php') ?>
 
         <a href="GestionProduits.php" class="back_btn"><img src="images/back.png"> Retour</a>
-        <h2>Add new product</h2>
-        <form method="POST" enctype="multipart/form-data">
+        <h2>Add new category</h2>
+        <form method="POST"  enctype="multipart/form-data">
             <label>Product name</label>
             <input type="text" name="productName" required>
 
