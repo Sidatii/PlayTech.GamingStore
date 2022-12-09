@@ -55,7 +55,7 @@
                 <img src="'.$docimg. $row['img'] . '" alt="product photo">
                 <h4>' . $row['ProductName'] . '</h4>
                 <h4>' . $row['Price en DH'] . ' dh</h4>
-                <h4>' . $row['Quantity'] . '</h4>
+                <h4>' . $row['Discription'] . '</h4>
               </div>
               ';
       }
@@ -70,7 +70,7 @@
                   <img src="' .$docimg. $row['img'] . '" alt="product photo">
                   <h4>' . $row['ProductName'] . '</h4>
                   <h4>' . $row['Price en DH'] . ' dh</h4>
-                  <h4>' . $row['Quantity'] . '</h4>
+                  <h4>' . $row['Discription'] . '</h4>
                 </div>';
         }
        }
@@ -86,7 +86,7 @@
                 <img src="' .$docimg. $row['img'] . '" alt="product photo">
                 <h4>' . $row['ProductName'] . '</h4>
                 <h4>' . $row['Price en DH'] . ' dh</h4>
-                <h4> Qty: '  . $row['Quantity'] . '</h4>
+                <h4>  '  . $row['Discription'] . '</h4>
               </div>
               ';
       }
