@@ -41,10 +41,10 @@ include_once "connexion.php";
           <!-- colspan="4" -->
             <h3>catégorie</h3>
             <?php
-            //requête pour afficher la liste des employés
+            //requête pour afficher la liste des produits
             $req = mysqli_query($conn, "SELECT * FROM category");
             if (mysqli_num_rows($req) == 0) {
-              //s'il n'existe pas d'employé dans la base de donné , alors on affiche ce message :
+              //s'il n'existe pas produits dans la base de donné , alors on affiche ce message :
               echo "Il n'y a pas encore de category ajouter !";
             } else { ?>
           </th>
@@ -73,7 +73,7 @@ include_once "connexion.php";
             } ?>
 
         <tr>
-          <td class="preactions" colspan="7"><a class="actions" href="addcat.php">Ajouter</a></td>
+          <td colspan="3"><a class="actions" href="addcat.php">Ajouter</a></td>
         </tr>
 
 
@@ -103,9 +103,9 @@ include_once "connexion.php";
                 <th>Action</th>
               </tr>
               <?php
-              //si non , affichons la liste de tous les employés
+              //si non , affichons la liste de tous les produits
               while ($row = mysqli_fetch_assoc($req)) {
-            ?>
+              ?>
               <tr>
                 <td>
                   <?= $row['ID'] ?>
@@ -120,7 +120,7 @@ include_once "connexion.php";
                   <?= $row['Quantity'] ?>
                 </td>
                 <td><img src="./image/<?php echo $row['img']; ?>"></td>
-                <!--Nous alons mettre l'id de chaque employé dans ce lien -->
+                <!--Nous alons mettre l'id de chaque produit dans ce lien -->
                 <td>
                   <a href="editproduct.php?ID=<?= $row['ID'] ?>"><img class="hh" src="images/pen.png" style="margin-right: 5px;"></a>
                   <a href="supprimer.php?ID=<?= $row['ID'] ?>"><img class="hh" src="images/trash.png"></a>
@@ -129,7 +129,7 @@ include_once "connexion.php";
               <?php
               }
             }
-            ?>
+              ?>
         <tr>
           <td colspan="7"><a class="actions" href="add.php">Ajouter</a></td>
         </tr>
