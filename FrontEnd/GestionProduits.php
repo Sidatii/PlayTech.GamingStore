@@ -43,7 +43,7 @@ include_once "dbconnection.php";
             <h3>catégorie</h3>
             <?php
             //requête pour afficher la liste des produits
-            $req = mysqli_query($conn, "SELECT * FROM category");
+            $req = mysqli_query($con, "SELECT * FROM category");
             if (mysqli_num_rows($req) == 0) {
               //s'il n'existe pas produits dans la base de donné , alors on affiche ce message :
               echo "Il n'y a pas encore de category ajouter !";
