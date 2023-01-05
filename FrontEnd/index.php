@@ -18,8 +18,88 @@
     <?php
     include "navbar.php";
     ?>
-    <br><br>
-    <div class="container mt-5">
+    <br><br><br>
+        <div class="opening">
+
+            <img class="atari div1" src="images/atari.jpg" alt="Remember our past" width="50%">
+            <p class="text-light div2">Lorem ipsum dolor sit amet consectetur adipisicing elit. A quod ea doloribus dolorem? Suscipit, porro ullam necessitatibus quod at officiis velit consectetur veritatis tenetur quia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur accusamus corrupti quod, totam ratione officiis? Quisquam, eveniet laudantium. Recusandae, earum.</p>
+            <img class="atari div4" src="images/atari2.jpg" alt="Remember our past" width="50%">
+            <p class="text-light div3">Lorem ipsum dolor sit amet consectetur adipisicing elit. A quod ea doloribus dolorem? Suscipit, porro ullam necessitatibus quod at officiis velit consectetur veritatis tenetur quia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur accusamus corrupti quod, totam ratione officiis? Quisquam, eveniet laudantium. Recusandae, earum.</p>
+
+        </div>
+        <div class="topsales">
+            <div> Top sales</div>
+        </div>
+        <div class="contenaire">
+
+            <div class="component1">
+                <div class="card m-2" style="width: 12rem;">
+                    <img src="images/test.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-light">Card title</h5>
+                        <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component1">
+                <div class="card m-2" style="width: 12rem;">
+                    <img src="images/test.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-light">Card title</h5>
+                        <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component1">
+                <div class="card m-2" style="width: 12rem;">
+                    <img src="images/test.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-light">Card title</h5>
+                        <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component1">
+                <div class="card m-2" style="width: 12rem;">
+                    <img src="images/test.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-light">Card title</h5>
+                        <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component1">
+                <div class="card m-2" style="width: 12rem;">
+                    <img src="images/test.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-light">Card title</h5>
+                        <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <center><hr></center>
+        <div class="newtech">
+
+
+
+
+
+
+
+
+        </div>
+        
+
+        
+
+
+    <!-- <div class="container mt-5">
         <div class="row">
             <div class="col-lg-9">
                 <div class="row">
@@ -34,7 +114,7 @@
                     <H3 class="text-light " style="display: flex; flex-direction:column; align-items:center;">TOP SALES</H3>
                 </div>
                 <div class="row ">
-                    <div class="card  col-lg-4 m-3" style="width: 15rem; background:#00057C;">
+                    <div class="card  col-lg-4 m-3 cardd" style="width: 15rem; background:#00057C;">
                         <img src="images/test.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-light">Card title</h5>
@@ -58,7 +138,7 @@
                 </div>
 
             </div>
-            <div class="col-lg-3" style="display: flex; flex-direction:column; align-items:center;">
+            <div class="" style="display: flex; flex-direction:column; align-items:center;">
                 <h3 class="text-light">new product</h3>
                 <div class="card m-1" style="width: 10rem; background:#00057C;">
                     <img src="images/test.png" class="card-img-top" alt="...">
@@ -81,7 +161,7 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
 
     <?php
     include('footer.php');

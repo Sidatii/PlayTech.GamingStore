@@ -15,22 +15,28 @@
   include('navbar.php');
   ?>
   <br><br><br>
-  <div class="galleryheader" id="galleryheader">
-    <img src="images/gallery.jpg" alt="Gaming room">
-    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, animi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos qui sint non autem? Molestiae ratione quae cum, nihil ipsum officia sed assumenda, eos at optio aperiam et accusamus odio asperiores.</h3>
+  <div class="opening">
+
+    <img class="atari div1" src="images/gallery.jpg" alt="Remember our past" width="50%">
+    <p class="text-light div2">Lorem ipsum dolor sit amet consectetur adipisicing elit. A quod ea doloribus dolorem? Suscipit, porro ullam necessitatibus quod at officiis velit consectetur veritatis tenetur quia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur accusamus corrupti quod, totam ratione officiis? Quisquam, eveniet laudantium. Recusandae, earum.</p>
+    <img class="atari div4" src="images/2738.jpg" alt="all about gaming" width="50%">
   </div>
   <!-- change by mokh -->
-  <div class="filterbox w-10 ">
-    <?php
-    include('connexion.php');
-    //requête pour afficher la liste des category
-    $req = mysqli_query($conn, "SELECT * FROM category");
 
-    while ($row = mysqli_fetch_assoc($req)) {
-      echo '<a class="btn btn-outline-light m-1" href="?category=' . $row["IDC"] . '">' . $row['CatName'] . '</a>';
-    }
-    ?>
-  </div>
+  <center>
+    <div class="filterbox w-10 filter0">
+      <?php
+      include('connexion.php');
+      //requête pour afficher la liste des category
+      $req = mysqli_query($conn, "SELECT * FROM category");
+
+      while ($row = mysqli_fetch_assoc($req)) {
+        echo '<a class="btn btn-outline-light m-1 filter" href="?category=' . $row["IDC"] . '">' . $row['CatName'] . '</a>';
+      }
+      ?>
+    </div>
+  </center>
+
   <div class="products">
 
     <?php
@@ -39,17 +45,17 @@
     if (isset($_GET['category'])) {
 
        {
-        if($_GET['category']==11){
+        if($_GET['category']==1){
           $sql = "SELECT * FROM produits";
       $req = mysqli_query($conn, $sql);
-      $docimg="images/";
+      $docimg="image/";
       while ($row = mysqli_fetch_assoc($req)) {
         echo '
               <div class="productCard" style="width:300px; height:250px;">
                 <img src="'.$docimg. $row['img'] . '" alt="product photo">
                 <h4>' . $row['ProductName'] . '</h4>
                 <h4>' . $row['Price en DH'] . ' dh</h4>
-                <h4>' . $row['Quantity'] . '</h4>
+                <h4>' . $row['Discription'] . '</h4>
               </div>
               ';
       }
@@ -57,14 +63,14 @@
         $category = $_GET['category'];
         $sql = "SELECT * FROM produits WHERE IDC = $category";
         $req = mysqli_query($conn, $sql);
-        $docimg="images/";
+        $docimg="image/";
         while ($row = mysqli_fetch_assoc($req)) {
           echo '
                 <div class="productCard" style="width:300px; height:250px;">
                   <img src="' .$docimg. $row['img'] . '" alt="product photo">
                   <h4>' . $row['ProductName'] . '</h4>
                   <h4>' . $row['Price en DH'] . ' dh</h4>
-                  <h4>' . $row['Quantity'] . '</h4>
+                  <h4>' . $row['Discription'] . '</h4>
                 </div>';
         }
        }
@@ -73,14 +79,14 @@
      else {
       $sql = "SELECT * FROM produits";
       $req = mysqli_query($conn, $sql);
-      $docimg="images/";
+      $docimg="image/";
       while ($row = mysqli_fetch_assoc($req)) {
         echo '
               <div class="productCard" style="width:300px; height:250px;">
                 <img src="' .$docimg. $row['img'] . '" alt="product photo">
                 <h4>' . $row['ProductName'] . '</h4>
                 <h4>' . $row['Price en DH'] . ' dh</h4>
-                <h4>' . $row['Quantity'] . '</h4>
+                <h4>  '  . $row['Discription'] . '</h4>
               </div>
               ';
       }

@@ -1,6 +1,5 @@
 html,
 body {
-  /* height: 100%; */
   width: 100%;
   
 }
@@ -11,11 +10,11 @@ body {
   justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background: linear-gradient(122.71deg, #000000 0%, #00057C 89.58%, #000AF9 100%);
-  background-repeat: no-repeat;
+  /* background: linear-gradient(122.71deg, #3A6186 0%, #89253E 89.58%);
+  background-repeat: no-repeat; */
 }
 
-.form-signin {
+.form-signin { 
   max-width: 430px;
   padding: 15px;
 }
@@ -69,4 +68,24 @@ body {
 
 .but{
   text-decoration: none;
+  font-weight: bold;
+  font-family: 'Titillium Web', sans-serif;
+  color: aliceblue;
+}
+
+.but{
+  width: fit-content;
+  border-radius: 10px;
+  padding: 3px 10px;
+  border: 2px solid aliceblue;
+  background: none;
+}
+.but:hover{
+  background-color: aliceblue;
+  color: #000000;
+}
+
+p{
+  color: aliceblue;
+  font-family: 'Titillium Web', sans-serif;
 }
